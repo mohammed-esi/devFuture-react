@@ -1,0 +1,274 @@
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1024px to 1366px
+*/
+
+@media (min-width: 1024px) and (max-width: 1280px) {
+  /* Services */
+  #services {
+    .card {
+      .card-header {
+        .card {
+          .card-body {
+            .btn-card {
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+      .card-general {
+        .card {
+          .card-body {
+            .float-right {
+              max-width: 15%;
+            }
+            .float-left {
+              max-width: 85%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 991px to 1024px
+*/
+
+@media (min-width: 991px) and (max-width: 1024px) {
+  /* Services */
+  #services {
+    .flex-column {
+      i {
+        font-size: 70px;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+    }
+    .card {
+      .card-header {
+        .card {
+          .card-body {
+            .btn-card {
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+      .card-general {
+        .card {
+          .card-body {
+            .float-right {
+              max-width: 18%;
+            }
+            .float-left {
+              max-width: 85%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Tables Apple */
+
+@media (min-width: 768px) and (max-width: 768px) {
+  /* Services */
+  #services {
+    .flex-column {
+      i {
+        font-size: 70px;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+    }
+    .card {
+      .card-header {
+        .card {
+          .card-body {
+            .btn-card {
+              font-size: 0.79rem;
+            }
+            .form-group {
+              width: 156px;
+            }
+          }
+        }
+      }
+      .card-general {
+        .card {
+          .card-body {
+            .float-right {
+              max-width: 22%;
+            }
+            .float-left {
+              max-width: 78%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Tables Apple */
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* Services */
+  #services {
+    .flex-column {
+      i {
+        font-size: 70px;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+    }
+    .card {
+      .card-header {
+        .card {
+          .card-body {
+            .btn-card {
+              font-size: 0.75rem;
+            }
+            .form-group {
+              width: 125%;
+            }
+          }
+        }
+      }
+      .card-general {
+        .card {
+          .card-body {
+            .float-right {
+              max-width: 22%;
+            }
+            .float-left {
+              max-width: 78%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Phones */
+
+@media (min-width: 481px) and (max-width: 767px) {
+  /* Services */
+  #services {
+    .flex-column {
+      i {
+        font-size: 60px;
+      }
+      h1 {
+        font-size: 1.7rem;
+      }
+    }
+    .card {
+      .card-header {
+        .card {
+          .card-body {
+            .justify-content-end {
+              justify-content: center !important;
+            }
+            .justify-content-end > button {
+              justify-content: center !important;
+            }
+            .btn-card {
+              font-size: 0.9rem;
+            }
+          }
+        }
+      }
+      .card-general {
+        .card {
+          .card-body {
+            .float-right {
+              max-width: 25%;
+            }
+            .float-left {
+              max-width: 75%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Phones */
+
+@media (min-width: 320px) and (max-width: 480px) {
+  /* Services */
+  #services {
+    .flex-column {
+      i {
+        font-size: 55px;
+      }
+      h1 {
+        font-family: 1.5rem;
+      }
+    }
+    .card {
+      .card-header {
+        .card {
+          .card-body {
+            .justify-content-end {
+              justify-content: center !important;
+            }
+            .justify-content-end > button {
+              justify-content: center !important;
+            }
+            .btn-card {
+              font-size: 0.9rem;
+            }
+          }
+        }
+      }
+      .card-general {
+        .card {
+          .card-body {
+            .float-right {
+              max-width: 30%;
+              p {
+                font-size: 0.6rem;
+              }
+            }
+            .float-left {
+              max-width: 70%;
+              h5 {
+                margin-bottom: 0;
+                font-weight: 300;
+                line-height: 0.9;
+                i {
+                  font-size: 1.3rem;
+                }
+              }
+              p {
+                font-size: 0.8rem;
+              }
+            }
+            .badge-pill {
+              padding-right: 0.5rem;
+              padding-right: 0.5rem;
+            }
+          }
+        }
+      }
+      .card-footer {
+        .card {
+          .btn-card {
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+  }
+}

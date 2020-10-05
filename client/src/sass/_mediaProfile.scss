@@ -1,0 +1,367 @@
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1024px to 1366px
+*/
+
+@media (min-width: 1024px) and (max-width: 1280px) {
+  // Header Profile
+  #user-profile {
+    .container {
+      img {
+        margin-top: -17.5%;
+      }
+      h1 {
+        font-size: 2.3rem;
+      }
+    }
+  }
+  // User Information
+  #about-user {
+    .row {
+      .col-md-4 {
+        .card {
+          .card-body {
+            .text-muted {
+              font-size: 0.95rem;
+            }
+          }
+        }
+      }
+      .col-md-8 {
+        .card {
+          .card-body {
+            .lead {
+              font-size: 0.875rem;
+              font-weight: 400;
+            }
+            .badge-pill {
+              padding-right: 0.6rem;
+              padding-left: 0.6rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 991px to 1024px
+*/
+
+@media (min-width: 991px) and (max-width: 1024px) {
+  // Header Profile
+  #user-profile {
+    .container {
+      img {
+        margin-top: -17.5%;
+      }
+      h1 {
+        font-size: 2.3rem;
+      }
+    }
+  }
+  // User Information
+  #about-user {
+    .row {
+      .col-md-4 {
+        .card {
+          .card-body {
+            .text-muted {
+              font-size: 0.95rem;
+            }
+          }
+        }
+      }
+      .col-md-8 {
+        .card {
+          .card-body {
+            .lead {
+              font-size: 0.875rem;
+              font-weight: 400;
+            }
+            .badge-pill {
+              padding-right: 0.55rem;
+              padding-left: 0.55rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Tables Apple */
+
+@media (min-width: 768px) and (max-width: 768px) {
+  // Header Profile
+  #user-profile {
+    .container {
+      img {
+        margin-top: -23%;
+      }
+      h1 {
+        font-size: 2.2rem;
+      }
+    }
+  }
+  // User Information
+  #about-user {
+    .row {
+      .col-md-4 {
+        .card {
+          .card-body {
+            .text-muted {
+              font-size: 0.8rem;
+            }
+          }
+        }
+      }
+      .col-md-8 {
+        h1 {
+          font-weight: 600;
+          font-size: 2.2rem;
+        }
+        .card {
+          .card-body {
+            a {
+              h5 {
+                font-size: 1rem;
+                font-weight: 600;
+              }
+            }
+            .lead {
+              font-size: 0.8rem;
+              font-weight: 300;
+            }
+            .media-badge {
+              .badge-card {
+                background-color: $color_verylight_green;
+                color: $color_darken_blue;
+                strong {
+                  font-size: 0.7rem;
+                }
+              }
+              .badge-pill {
+                padding-left: 0;
+                padding-right: 0;
+              }
+              .mx-2 {
+                margin-left: 0.1rem !important;
+                margin-right: 0.1rem !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Tables Apple */
+
+@media (min-width: 768px) and (max-width: 991px) {
+  // Header Profile
+  #user-profile {
+    .container {
+      img {
+        margin-top: -23%;
+      }
+      h1 {
+        font-size: 2.2rem;
+      }
+    }
+  }
+
+  // User Information
+  #about-user {
+    .row {
+      .col-md-4 {
+        .card {
+          .card-body {
+            .text-muted {
+              font-size: 0.8rem;
+            }
+          }
+        }
+      }
+      .col-md-8 {
+        h1 {
+          font-weight: 600;
+          font-size: 2.2rem;
+        }
+        .card {
+          .card-body {
+            a {
+              h5 {
+                font-size: 1rem;
+                font-weight: 600;
+              }
+            }
+            .lead {
+              font-size: 0.8rem;
+              font-weight: 300;
+            }
+            .media-badge {
+              .badge-card {
+                background-color: $color_verylight_green;
+                color: $color_darken_blue;
+                strong {
+                  font-size: 0.7rem;
+                }
+              }
+              .badge-pill {
+                padding-left: 0.1rem;
+                padding-right: 0.1rem;
+              }
+              .mx-2 {
+                margin-left: 0.2rem !important;
+                margin-right: 0.2rem !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Phones */
+
+@media (min-width: 481px) and (max-width: 767px) {
+  // Navbar
+  .navbar-user {
+    .navbar-brand {
+      img {
+        height: 45px;
+        width: 100px;
+      }
+    }
+    .navbar-nav {
+      .nav-item {
+        .nav-link {
+          text-align: center;
+          font-size: 1rem;
+          font-weight: 600;
+        }
+        .nav-link:hover {
+          background: none;
+          border-radius: none;
+          transform: scale(1.1);
+          transition-duration: ease;
+        }
+      }
+    }
+  }
+  // Header Profile
+  #user-profile {
+    .container {
+      img {
+        margin-top: -32%;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
+/* Phones */
+
+@media (min-width: 320px) and (max-width: 480px) {
+  // Navbar
+  .navbar-user {
+    .navbar-brand {
+      img {
+        height: 45px;
+        width: 100px;
+      }
+    }
+    .navbar-nav {
+      .nav-item {
+        .nav-link {
+          text-align: center;
+          font-size: 1rem;
+          font-weight: 600;
+        }
+        .nav-link:hover {
+          background: none;
+          border-radius: none;
+          transform: scale(1.1);
+          transition-duration: ease;
+        }
+      }
+    }
+  }
+  // Header Profile
+  #user-profile {
+    .container {
+      img {
+        width: 200px;
+        height: 200px;
+        margin-top: -45%;
+      }
+      h1 {
+        font-size: 1.2rem;
+      }
+      h4 {
+        font-size: 1rem;
+      }
+    }
+  }
+  // User Information
+  #about-user {
+    .row {
+      .col-md-4 {
+        .card {
+          .card-body {
+            h5 {
+              font-weight: 500;
+              font-size: 1.2rem;
+            }
+            .text-muted {
+              font-size: 0.875rem;
+            }
+          }
+        }
+      }
+      .col-md-8 {
+        h1 {
+          font-size: 1.6rem;
+        }
+        .card {
+          .card-body {
+            a {
+              h5 {
+                font-size: 1rem;
+                font-weight: 600;
+              }
+            }
+            .lead {
+              font-size: 0.8rem;
+              font-weight: 300;
+            }
+            .media-badge {
+              .badge-card {
+                background-color: $color_verylight_green;
+                color: $color_darken_blue;
+                strong {
+                  font-size: 0.7rem;
+                }
+              }
+              .badge-pill {
+                padding-left: 0.1rem;
+                padding-right: 0.1rem;
+              }
+              .mx-2 {
+                margin-left: 0.2rem !important;
+                margin-right: 0.2rem !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

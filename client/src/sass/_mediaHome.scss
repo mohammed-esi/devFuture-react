@@ -1,0 +1,555 @@
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1024px to 1366px
+*/
+
+@media (min-width: 1024px) and (max-width: 1280px) {
+  // Header screen
+  #welcome {
+    nav {
+      .navbar-brand {
+        img {
+          height: 60px;
+          width: 150px;
+        }
+      }
+      .navbar-nav {
+        .ml-22 {
+          margin-left: 3rem;
+        }
+        .nav-item {
+          .nav-link {
+            font-size: 1rem;
+            font-weight: 600;
+          }
+        }
+        .nav-btn {
+          font-size: 1rem;
+          font-weight: 600;
+        }
+      }
+    }
+
+    .text-header {
+      font-size: 1rem;
+      .offset-md-3 {
+        margin-left: 20%;
+      }
+    }
+  }
+
+  // Users
+  #users {
+    .container-fluid {
+      .card {
+        min-height: 300px;
+      }
+    }
+  }
+}
+
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 991px to 1024px
+*/
+
+@media (min-width: 991px) and (max-width: 1024px) {
+  // Header screen
+  #welcome {
+    background-image: url('../img/small_screen.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    nav {
+      .navbar-brand {
+        img {
+          height: 60px;
+          width: 150px;
+        }
+      }
+      .navbar-nav {
+        .ml-22 {
+          margin-left: 3rem;
+        }
+        .nav-item {
+          .nav-link {
+            font-size: 1rem;
+            font-weight: 600;
+          }
+        }
+        .nav-btn {
+          font-size: 1rem;
+          font-weight: 600;
+        }
+      }
+    }
+
+    .text-header {
+      margin-top: 20px;
+      font-size: 1rem;
+      color: $color_darken_blue;
+      .offset-md-3 {
+        margin-left: 28%;
+      }
+      .display-4 {
+        font-size: 3.2rem;
+      }
+    }
+  }
+  // About
+  #about {
+    .card {
+      border-radius: 14px;
+      margin-bottom: 25px;
+      min-height: 280px;
+      box-shadow: 0 4.5px 3.6px rgba(0, 0, 0, 0.024),
+        0 12.5px 10px rgba(0, 0, 0, 0.035), 0 30.1px 24.1px rgba(0, 0, 0, 0.046),
+        0 100px 80px rgba(0, 0, 0, 0.07);
+    }
+    .about-end {
+      margin-top: -150px;
+    }
+  }
+
+  // Users
+  #users {
+    .container-fluid {
+      .card {
+        min-height: 300px;
+      }
+    }
+  }
+}
+
+/* Tables Apple */
+
+@media (min-width: 768px) and (max-width: 768px) {
+  // Header screen
+  #welcome {
+    background-image: url('../img/small_screen.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    nav {
+      .navbar-brand {
+        img {
+          height: 60px;
+          width: 150px;
+        }
+      }
+      .navbar-nav {
+        .ml-22 {
+          margin-left: 0;
+        }
+        .mx-3 {
+          margin: 0 0;
+        }
+        .nav-item {
+          .nav-link {
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 600;
+          }
+          .nav-link:hover {
+            background: none;
+            border-radius: none;
+            transform: scale(1.1);
+            transition-duration: ease;
+          }
+          .nav-btn {
+            margin-top: 7px;
+            display: flex;
+            text-decoration: none;
+            justify-content: center;
+            font-size: 1rem;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+
+    .text-header {
+      margin-top: 20px;
+      font-size: 1rem;
+      color: $color_darken_blue;
+      .offset-md-3 {
+        margin-left: 23%;
+      }
+      .display-4 {
+        font-size: 2.6rem;
+      }
+    }
+  }
+
+  // About
+  #about {
+    background-image: url('../img/small-screen-about.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    .card {
+      border-radius: 14px;
+      margin-bottom: 25px;
+      box-shadow: 0 4.5px 3.6px rgba(0, 0, 0, 0.024),
+        0 12.5px 10px rgba(0, 0, 0, 0.035), 0 30.1px 24.1px rgba(0, 0, 0, 0.046),
+        0 100px 80px rgba(0, 0, 0, 0.07);
+    }
+    .about-end {
+      margin-top: 25px;
+    }
+  }
+
+  // Users
+  #users {
+    background-image: url('../img/img-users-small-screen.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    .container {
+      margin-top: -80px;
+      h3,
+      p {
+        color: $color_darken_blue;
+      }
+    }
+    .container-fluid {
+      .card {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        border-radius: 50px;
+        .card-body {
+          p {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Tables */
+
+@media (min-width: 768px) and (max-width: 991px) {
+  // Header screen
+  #welcome {
+    background-image: url('../img/small_screen.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    nav {
+      .navbar-brand {
+        img {
+          height: 60px;
+          width: 150px;
+        }
+      }
+      .navbar-nav {
+        .ml-22 {
+          margin-left: 0;
+        }
+        .mx-3 {
+          margin: 0 0;
+        }
+        .nav-item {
+          .nav-link {
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 600;
+          }
+          .nav-link:hover {
+            background: none;
+            border-radius: none;
+            transform: scale(1.1);
+            transition-duration: ease;
+          }
+          .nav-btn {
+            margin-top: 7px;
+            display: flex;
+            text-decoration: none;
+            justify-content: center;
+            font-size: 1rem;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+
+    .text-header {
+      margin-top: 20px;
+      font-size: 1rem;
+      color: $color_darken_blue;
+      .offset-md-3 {
+        margin-left: 23%;
+      }
+      .display-4 {
+        font-size: 2.6rem;
+      }
+    }
+  }
+
+  // About
+  #about {
+    background-image: url('../img/small-screen-about.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    .card {
+      border-radius: 14px;
+      margin-bottom: 25px;
+      box-shadow: 0 4.5px 3.6px rgba(0, 0, 0, 0.024),
+        0 12.5px 10px rgba(0, 0, 0, 0.035), 0 30.1px 24.1px rgba(0, 0, 0, 0.046),
+        0 100px 80px rgba(0, 0, 0, 0.07);
+    }
+    .about-end {
+      margin-top: 25px;
+    }
+  }
+
+  // Users
+  #users {
+    background-image: url('../img/img-users-small-screen.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    .container {
+      margin-top: -80px;
+      h3,
+      p {
+        color: $color_darken_blue;
+      }
+    }
+    .container-fluid {
+      .card {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        border-radius: 50px;
+        .card-body {
+          p {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Phones */
+
+@media (min-width: 481px) and (max-width: 767px) {
+  // Header screen
+  #welcome {
+    background-image: url('../img/small_screen.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    nav {
+      .navbar-brand {
+        img {
+          height: 60px;
+          width: 150px;
+        }
+      }
+      .navbar-nav {
+        .ml-22 {
+          margin-left: 0;
+        }
+        .mx-3 {
+          margin: 0 0;
+        }
+        .nav-item {
+          .nav-link {
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 600;
+          }
+          .nav-link:hover {
+            background: none;
+            border-radius: none;
+            transform: scale(1.1);
+            transition-duration: ease;
+          }
+          .nav-btn {
+            margin-top: 7px;
+            display: flex;
+            text-decoration: none;
+            justify-content: center;
+            font-size: 1rem;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+
+    .text-header {
+      margin-top: 20px;
+      font-size: 1rem;
+      color: $color_darken_blue;
+      .offset-md-3 {
+        margin-left: 0%;
+      }
+      .display-4 {
+        font-size: 2.6rem;
+      }
+    }
+  }
+
+  // About
+  #about {
+    background-image: url('../img/small-screen-about.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    .card {
+      border-radius: 14px;
+      margin-bottom: 25px;
+      box-shadow: 0 4.5px 3.6px rgba(0, 0, 0, 0.024),
+        0 12.5px 10px rgba(0, 0, 0, 0.035), 0 30.1px 24.1px rgba(0, 0, 0, 0.046),
+        0 100px 80px rgba(0, 0, 0, 0.07);
+    }
+    .about-end {
+      margin-top: 25px;
+    }
+  }
+
+  // Users
+  #users {
+    background-image: url('../img/img-users-very-small.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    .container {
+      margin-top: -80px;
+      h3,
+      p {
+        color: $color_darken_blue;
+      }
+    }
+    .container-fluid {
+      .card {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        border-radius: 50px;
+        .card-body {
+          p {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+
+  // Footer
+  #main-footer {
+    .media-footer {
+      margin-top: 50px;
+    }
+  }
+}
+
+/* Phones */
+
+@media (min-width: 320px) and (max-width: 480px) {
+  // Header screen
+  #welcome {
+    background-image: url('../img/xl_small_screen.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    nav {
+      .navbar-brand {
+        img {
+          height: 45px;
+          width: 100px;
+        }
+      }
+      .navbar-nav {
+        .ml-22 {
+          margin-left: 0;
+        }
+        .mx-3 {
+          margin: 0 0;
+        }
+        .nav-item {
+          .nav-link {
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 600;
+          }
+          .nav-link:hover {
+            background: none;
+            border-radius: none;
+            transform: scale(1.1);
+            transition-duration: ease;
+          }
+          .nav-btn {
+            margin-top: 7px;
+            display: flex;
+            text-decoration: none;
+            justify-content: center;
+            font-size: 1rem;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+
+    .text-header {
+      margin-top: 20px;
+      font-size: 1rem;
+      color: $color_darken_blue;
+      .offset-md-3 {
+        margin-left: 0%;
+      }
+      .display-4 {
+        font-size: 2.6rem;
+      }
+    }
+  }
+
+  // About
+  #about {
+    background-image: url('../img/small-screen-about.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    .card {
+      border-radius: 14px;
+      margin-bottom: 25px;
+      box-shadow: 0 4.5px 3.6px rgba(0, 0, 0, 0.024),
+        0 12.5px 10px rgba(0, 0, 0, 0.035), 0 30.1px 24.1px rgba(0, 0, 0, 0.046),
+        0 100px 80px rgba(0, 0, 0, 0.07);
+    }
+    .about-end {
+      margin-top: 25px;
+    }
+  }
+
+  // Users
+  #users {
+    background-image: url('../img/img-users-very-small.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    .container {
+      margin-top: -80px;
+      h3,
+      p {
+        color: $color_darken_blue;
+      }
+    }
+    .container-fluid {
+      .card {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        border-radius: 50px;
+      }
+    }
+  }
+
+  // Footer
+  #main-footer {
+    .media-footer {
+      margin-top: 50px;
+    }
+  }
+}

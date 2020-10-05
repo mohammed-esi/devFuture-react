@@ -1,0 +1,133 @@
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1024px to 1366px
+*/
+
+@media (min-width: 1024px) and (max-width: 1280px) {
+  #users_developer {
+    .container {
+      .row {
+        h1 {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+}
+
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 991px to 1024px
+*/
+
+@media (min-width: 991px) and (max-width: 1024px) {
+  #users_developer {
+    .container {
+      .row {
+        h1 {
+          font-size: 1.7rem;
+        }
+      }
+      #field-users {
+        .card {
+          .card-body {
+            img {
+              margin-top: -16%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Tables Apple */
+
+@media (min-width: 768px) and (max-width: 768px) {
+  #users_developer {
+    .container {
+      .row {
+        h1 {
+          font-size: 1.7rem;
+        }
+      }
+      #field-users {
+        .card {
+          .card-body {
+            img {
+              margin-top: -16%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Tables Apple */
+
+@media (min-width: 768px) and (max-width: 991px) {
+  #users_developer {
+    .container {
+      .row {
+        h1 {
+          font-size: 1.7rem;
+        }
+      }
+      #field-users {
+        .card {
+          .card-body {
+            img {
+              margin-top: -16%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Phones */
+
+@media (min-width: 481px) and (max-width: 767px) {
+  #users_developer {
+    .container {
+      .row {
+        h1 {
+          font-size: 1.7rem;
+          text-align: center;
+        }
+        .form-group {
+          margin-top: 25px;
+        }
+      }
+    }
+  }
+}
+
+/* Phones */
+
+@media (min-width: 320px) and (max-width: 480px) {
+  #users_developer {
+    .container {
+      .row {
+        h1 {
+          font-size: 1.7rem;
+          text-align: center;
+        }
+        .form-group {
+          margin-top: 25px;
+        }
+      }
+      #field-users {
+        .card {
+          .card-body {
+            img {
+              margin-top: -30%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

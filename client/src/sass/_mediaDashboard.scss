@@ -1,0 +1,173 @@
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1024px to 1366px
+*/
+
+@media (min-width: 1024px) and (max-width: 1280px) {
+  #dashboard {
+    background: $color_lighten;
+    .container {
+      .row-header {
+        .card {
+          margin-left: 20px;
+          background: none;
+          border: none;
+          border-radius: 0;
+          box-shadow: none;
+        }
+      }
+      .row-content {
+        .card {
+          background: none;
+          border: none;
+          border-radius: 0;
+          box-shadow: none;
+        }
+      }
+    }
+  }
+}
+
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 991px to 1024px
+*/
+
+@media (min-width: 991px) and (max-width: 1024px) {
+  #dashboard {
+    background: $color_lighten;
+    .container {
+      .row-header {
+        .card {
+          margin-left: 20px;
+          background: none;
+          border: none;
+          border-radius: 0;
+          box-shadow: none;
+        }
+      }
+      .row-content {
+        .card {
+          background: none;
+          border: none;
+          border-radius: 0;
+          box-shadow: none;
+        }
+      }
+    }
+  }
+}
+
+/* Tables Apple */
+
+@media (min-width: 768px) and (max-width: 768px) {
+  #dashboard {
+    background: $color_lighten;
+    .container {
+      .row-header {
+        .card {
+          margin-left: 20px;
+          background: none;
+          border: none;
+          border-radius: 0;
+          box-shadow: none;
+        }
+      }
+      .row-content {
+        .card {
+          background: none;
+          border: none;
+          border-radius: 0;
+          box-shadow: none;
+        }
+      }
+    }
+  }
+}
+
+/* Tables */
+
+@media (min-width: 768px) and (max-width: 991px) {
+  #dashboard {
+    background: $color_lighten;
+    .container {
+      .row-header {
+        .card {
+          margin-left: 20px;
+          background: none;
+          border: none;
+          border-radius: 0;
+          box-shadow: none;
+        }
+      }
+      .row-content {
+        .card {
+          background: none;
+          border: none;
+          border-radius: 0;
+          box-shadow: none;
+        }
+      }
+    }
+  }
+}
+
+/* Phones */
+
+@media (min-width: 481px) and (max-width: 767px) {
+  #dashboard {
+    background: $color_lighten;
+    .container {
+      .row-header {
+        .card {
+          margin-left: 20px;
+          background: none;
+          border: none;
+          border-radius: 0;
+          box-shadow: none;
+        }
+      }
+      .row-content {
+        .card {
+          background: none;
+          border: none;
+          border-radius: 0;
+          box-shadow: none;
+          table {
+            margin-left: -45px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Phones */
+
+@media (min-width: 320px) and (max-width: 480px) {
+  #dashboard {
+    background: $color_lighten;
+    .container {
+      .row-header {
+        .card {
+          margin-left: 20px;
+          background: none;
+          border: none;
+          border-radius: 0;
+          box-shadow: none;
+        }
+      }
+      .row-content {
+        .card {
+          background: none;
+          border: none;
+          border-radius: 0;
+          box-shadow: none;
+          table {
+            margin-left: -45px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,125 @@
+#carsoule-section-devs {
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+    .carousel {
+      margin-right: 5%;
+      margin-left: 5%;
+      width: 100%;
+      background-color: $color_verylight_green;
+      border-radius: 14px;
+      min-height: 400px;
+      .carousel-inner {
+        .carousel-item {
+          color: $color_lighten;
+          h1 {
+            font-weight: 600;
+            font-family: 'Kavoon', cursive;
+          }
+          p {
+            font-weight: 400;
+            font-size: 1.4rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+#users_developer {
+  .container {
+    .row {
+      h1 {
+        font-weight: 600;
+        font-family: 'Kavoon', cursive;
+        i {
+          font-weight: 600;
+        }
+      }
+      .form-group {
+        textarea:focus,
+        textarea.form-control:focus,
+        input.form-control:focus,
+        input[type='text']:focus,
+        [type='text'].form-control:focus,
+        [contenteditable].form-control:focus {
+          box-shadow: inset 0 -1px 0 #ddd;
+          border: 2px solid $color_darken_blue;
+          border-radius: 5px;
+        }
+        .form-control {
+          background-color: $color_lighten;
+          border: none;
+          border-bottom: 2px solid $color_darken_blue;
+          border-radius: 0;
+        }
+        .form-control-error {
+          background-color: $color_lighten;
+          border: none;
+          border-bottom: 2px solid $color_danger;
+          border-radius: 0;
+        }
+        .form-control-success {
+          background-color: $color_lighten;
+          border: none;
+          border-bottom: 2px solid $color_success;
+          border-radius: 0;
+        }
+        i {
+          color: $color_darken_blue;
+          position: absolute;
+          padding: 10px;
+          left: 80%;
+        }
+      }
+    }
+    hr {
+      margin-left: 10%;
+      margin-right: 10%;
+    }
+    #field-users {
+      .card {
+        background-color: $color_lighten;
+        border-radius: 20px;
+        transition: 0.3s;
+        .card-body {
+          img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid $color_lighten_green;
+            margin-top: -25%;
+          }
+          h5 {
+            font-weight: 700;
+          }
+          h6 {
+            font-style: italic;
+            color: $color-grey-light;
+          }
+          a {
+            display: none;
+            transition: 0.3s;
+          }
+        }
+      }
+      .card:hover {
+        background-color: $color_lighten_green;
+        color: $color_lighten;
+        transition: 0.3s;
+        img {
+          border: 8px solid $color_lighten;
+        }
+        a {
+          display: block;
+          color: $color_lighten;
+          text-decoration: none;
+          transition: 0.3s;
+        }
+        a:hover {
+          color: $color_darken_blue;
+        }
+      }
+    }
+  }
+}

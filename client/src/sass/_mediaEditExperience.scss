@@ -1,0 +1,57 @@
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1024px to 1366px
+*/
+
+@media (min-width: 1024px) and (max-width: 1280px) {
+  /* Empty */
+}
+
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 991px to 1024px
+*/
+
+@media (min-width: 991px) and (max-width: 1024px) {
+  /* Empty */
+}
+
+/* Tables Apple */
+
+@media (min-width: 768px) and (max-width: 768px) {
+  /* Empty */
+}
+
+/* Tables Apple */
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* Empty */
+}
+
+/* Phones */
+
+@media (min-width: 481px) and (max-width: 767px) {
+  #form-profile {
+    .card {
+      .card-body {
+        .btn-card {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}
+
+/* Phones */
+
+@media (min-width: 320px) and (max-width: 480px) {
+  #form-profile {
+    .card {
+      .card-body {
+        .btn-card {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}

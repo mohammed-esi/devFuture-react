@@ -1,0 +1,113 @@
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1024px to 1366px
+*/
+
+@media (min-width: 1024px) and (max-width: 1280px) {
+  /* Login */
+  #login {
+    .card {
+      .card-body {
+        .or {
+          margin-top: -12%;
+        }
+      }
+    }
+  }
+}
+
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 991px to 1024px
+*/
+
+@media (min-width: 991px) and (max-width: 1024px) {
+  /* Login */
+  #login {
+    .card {
+      .card-body {
+        .or {
+          margin-top: -13%;
+        }
+      }
+    }
+  }
+}
+
+/* Tables Apple */
+
+@media (min-width: 768px) and (max-width: 768px) {
+  /* Login */
+  #login {
+    .card {
+      .card-body {
+        .or {
+          margin-top: -13%;
+        }
+      }
+    }
+  }
+}
+
+/* Tables Apple */
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* Login */
+  #login {
+    .card {
+      .card-body {
+        .or {
+          margin-top: -13%;
+        }
+      }
+    }
+  }
+}
+
+/* Phones */
+
+@media (min-width: 481px) and (max-width: 767px) {
+  /* Login */
+  #login {
+    .card {
+      .card-body {
+        hr {
+          display: none;
+        }
+        .or {
+          margin-top: 0%;
+        }
+        .btn-google {
+          margin-top: 15px;
+        }
+        .btn-facebook {
+          margin-top: 15px;
+        }
+      }
+    }
+  }
+}
+
+/* Phones */
+
+@media (min-width: 320px) and (max-width: 480px) {
+  /* Login */
+  #login {
+    .card {
+      .card-body {
+        hr {
+          display: none;
+        }
+        .or {
+          margin-top: 0%;
+        }
+        .btn-google {
+          margin-top: 15px;
+        }
+        .btn-facebook {
+          margin-top: 15px;
+        }
+      }
+    }
+  }
+}

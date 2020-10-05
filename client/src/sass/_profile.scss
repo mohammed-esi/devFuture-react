@@ -1,0 +1,186 @@
+// Navbar
+.navbar-user {
+  // box-shadow: 0 5px 1.3px -17px rgba(0, 0, 0, 0.002),
+  //   0 40px 22px -17px rgba(0, 0, 0, 0.07);
+  -webkit-box-shadow: 0px 11px 10px -3px rgba(172, 170, 170, 0.58);
+  -moz-box-shadow: 0px 11px 10px -3px rgba(172, 170, 170, 0.58);
+  box-shadow: 0px 11px 10px -3px rgba(172, 170, 170, 0.58);
+  background: $color_lighten;
+  transition: 0.5s;
+  .navbar-toggler {
+    background: $color_lighten_green;
+    color: $color_darken_blue;
+    border-color: $color_darken_blue;
+    font-size: 1.7rem;
+  }
+  .navbar-brand {
+    img {
+      height: auto;
+      width: 150px;
+    }
+  }
+  .navbar-nav {
+    .nav-item {
+      .nav-link {
+        font-family: 'Skranji', cursive;
+        color: $color_darken_blue;
+        font-size: 1.1rem;
+        font-weight: 600;
+      }
+      .nav-link:hover {
+        color: $color_darken_blue;
+        border-radius: 12px;
+        background-color: $color_verylight_green;
+        transform: scale(1.1);
+        transition-duration: ease;
+      }
+    }
+    .btn:focus {
+      box-shadow: none;
+    }
+  }
+}
+
+// Cover Section
+#bg-profile {
+  min-height: 500px;
+  background-image: url('../img/img-bg-profile.png');
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+// Header Profile
+#user-profile {
+  min-height: 300px;
+  background-color: $color_lighten;
+  .container {
+    img {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      border: 14px solid $color_lighten;
+      margin-top: -15%;
+    }
+    h1 {
+      font-family: 'Skranji', cursive;
+      font-weight: 600;
+    }
+    h3 {
+      font-weight: 600;
+    }
+    h4 {
+      font-weight: 600;
+      font-style: italic;
+      color: $color-grey-light;
+    }
+  }
+}
+
+// User Information
+#about-user {
+  min-height: 400px;
+  background-image: url('../img/img-bg-profile.png');
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .row {
+    background-color: $color_lighten;
+    margin-left: 0;
+    margin-right: 0;
+    .col-md-4 {
+      .card {
+        background-color: $color_lighten;
+        border: none;
+        border-radius: 0;
+        .card-body {
+          h5 {
+            font-weight: 700;
+            font-family: 'Kavoon', cursive;
+          }
+          .text-muted {
+            font-size: 1rem;
+          }
+          .badge-green {
+            background-color: $color_darken_blue;
+            color: $color_lighten_green;
+          }
+          .badge-pill {
+            padding-right: 0.8rem;
+            padding-right: 0.8rem;
+          }
+          a {
+            text-decoration: none;
+            display: block;
+            color: $color_darken_blue;
+            transition: 0.3s;
+          }
+          a:hover {
+            color: $color_lighten_green;
+          }
+          h6 {
+            font-weight: 600;
+          }
+          .italic {
+            font-style: italic;
+          }
+          hr {
+            border-top: 1px solid $color-grey-light;
+          }
+          .margin-per {
+            margin-right: 5%;
+            margin-left: 5%;
+          }
+          .margin-per-two {
+            margin-left: 30%;
+            margin-right: 30%;
+          }
+        }
+      }
+    }
+    .col-md-8 {
+      h1 {
+        font-weight: 600;
+      }
+      .card {
+        background-color: $color_lighten;
+        box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.022),
+          0 6.7px 5.3px rgba(0, 0, 0, 0.033), 0 12.5px 10px rgba(0, 0, 0, 0.042),
+          0 22.3px 17.9px rgba(0, 0, 0, 0.05),
+          0 41.8px 33.4px rgba(0, 0, 0, 0.058), 0 100px 80px rgba(0, 0, 0, 0.07);
+        border-radius: 8px;
+        border: 1 solid $color_darken_blue;
+        .card-body {
+          a {
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: 700;
+            display: block;
+            color: $color_darken_blue;
+            transition: 0.3s;
+          }
+          a:hover {
+            color: $color_lighten_green;
+          }
+          .lead {
+            font-size: 0.9rem;
+            font-weight: 400;
+          }
+          .badge-card {
+            background-color: $color_verylight_green;
+            color: $color_darken_blue;
+          }
+          .badge-pill {
+            padding-right: 0.9rem;
+            padding-left: 0.9rem;
+            padding-top: 0.4rem;
+            padding-bottom: 0.4rem;
+            border-radius: 0;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,113 @@
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1024px to 1366px
+*/
+
+@media (min-width: 1024px) and (max-width: 1280px) {
+  /* Empty */
+}
+
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 991px to 1024px
+*/
+
+@media (min-width: 991px) and (max-width: 1024px) {
+  /* Empty */
+}
+
+/* Tables Apple */
+
+@media (min-width: 768px) and (max-width: 768px) {
+  /* Empty */
+}
+
+/* Tables Apple */
+
+@media (min-width: 768px) and (max-width: 991px) {
+  #get-started {
+    background-image: url('../img/img-register-small-screen.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    .card {
+      background-color: $color_lighten;
+      border-radius: 45px;
+      box-shadow: 0 -3.8px 19.4px rgba(0, 0, 0, 0.043),
+        0 -5.6px 33.6px rgba(0, 0, 0, 0.061), 0 -4px 44.1px rgba(0, 0, 0, 0.073),
+        0 4.1px 52.5px rgba(0, 0, 0, 0.079),
+        0 27.2px 61.3px rgba(0, 0, 0, 0.081), 0 100px 80px rgba(0, 0, 0, 0.07);
+      .card-body {
+        .text-center {
+          margin-top: 45px;
+        }
+        p {
+          margin: 25px 25px;
+        }
+        .media-signup {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+/* Phones */
+
+@media (min-width: 481px) and (max-width: 767px) {
+  #get-started {
+    background-image: url('../img/img-register-small-screen.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    .card {
+      background-color: $color_lighten;
+      border-radius: 45px;
+      box-shadow: 0 -3.8px 19.4px rgba(0, 0, 0, 0.043),
+        0 -5.6px 33.6px rgba(0, 0, 0, 0.061), 0 -4px 44.1px rgba(0, 0, 0, 0.073),
+        0 4.1px 52.5px rgba(0, 0, 0, 0.079),
+        0 27.2px 61.3px rgba(0, 0, 0, 0.081), 0 100px 80px rgba(0, 0, 0, 0.07);
+      .card-body {
+        .text-center {
+          margin-top: 45px;
+        }
+        p {
+          margin: 25px 25px;
+        }
+        .media-signup {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+/* Phones */
+
+@media (min-width: 320px) and (max-width: 480px) {
+  #get-started {
+    background-image: url('../img/img-register-small-screen.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    .card {
+      background-color: $color_lighten;
+      border-radius: 45px;
+      box-shadow: 0 -3.8px 19.4px rgba(0, 0, 0, 0.043),
+        0 -5.6px 33.6px rgba(0, 0, 0, 0.061), 0 -4px 44.1px rgba(0, 0, 0, 0.073),
+        0 4.1px 52.5px rgba(0, 0, 0, 0.079),
+        0 27.2px 61.3px rgba(0, 0, 0, 0.081), 0 100px 80px rgba(0, 0, 0, 0.07);
+      .card-body {
+        .text-center {
+          margin-top: 45px;
+        }
+        p {
+          margin: 25px 25px;
+        }
+        .media-signup {
+          display: none;
+        }
+      }
+    }
+  }
+}
