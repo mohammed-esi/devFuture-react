@@ -10,7 +10,8 @@ module.exports = function (passport) {
       {
         clientID: config.get('googleClientId'),
         clientSecret: config.get('googleClientSecret'),
-        callbackURL: 'http://localhost:5500/auth/google/callback',
+        callbackURL: '/auth/google/callback',
+        proxy: true,
       },
       async (accessToken, refreshToken, profile, done) => {
         try {
@@ -40,7 +41,8 @@ module.exports = function (passport) {
       {
         clientID: config.get('facebookClientId'),
         clientSecret: config.get('facebookClientSecret'),
-        callbackURL: 'http://localhost:5500/auth/facebook/callback',
+        callbackURL: '/auth/facebook/callback',
+        proxy: true,
         profileFields: ['id', 'displayName', 'photos', 'email'],
       },
       async (accessToken, refreshToken, profile, done) => {

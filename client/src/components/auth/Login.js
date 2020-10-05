@@ -4,7 +4,7 @@ import AlerContext from '../../context/alert/alertContext';
 import AuthContext from '../../context/auth/authContext';
 import Alert from '../layout/Alert';
 import Loading from '../layout/Loading';
-import { Redirect } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 const Login = (props) => {
   const alertConetxt = useContext(AlerContext);
@@ -74,23 +74,21 @@ const Login = (props) => {
                   <div className='row py-3'>
                     <div className='col-12'>
                       <div className='d-flex justify-content-center'>
-                        <button
-                          onClick={loginFacebook}
+                        <Link
+                          to='/auth/facebook'
                           className='btn btn-facebook btn-lg btn-block my-3'
                         >
                           <div className='d-flex justify-content-center'>
                             <i className='fab fa-facebook mr-4' />
                             Login with Facebook
                           </div>
-                        </button>
+                        </Link>
                       </div>
                     </div>
                     <div className='col-12'>
                       <div className='d-flex justify-content-center'>
                         <a
-                          href='http://localhost:5500/auth/google'
-                          target='_blank'
-                          onClick={loginGoogle}
+                          href='/google'
                           className='btn btn-google btn-lg btn-block my-3'
                         >
                           <div className='d-flex justify-content-center'>

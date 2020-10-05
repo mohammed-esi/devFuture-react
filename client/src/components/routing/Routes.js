@@ -4,6 +4,7 @@ import Dashboard from '../dashboard/Dashboard';
 import Welcome from '../pages/Home';
 import Login from '../auth/Login';
 import GetStarted from '../auth/GetStarted';
+import NotFound from '../pages/NotFound';
 
 const Routes = () => {
   return (
@@ -12,6 +13,7 @@ const Routes = () => {
       <Route exact path='/dashboard' component={Dashboard} />
       <Route exact path='/login' component={Login} />
       <Route exact path='/getStarted' component={GetStarted} />
+      <Route component={NotFound} />
     </Switch>
   );
 };
