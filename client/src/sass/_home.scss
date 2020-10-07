@@ -42,16 +42,16 @@
         font-family: 'Skranji', cursive;
         font-size: 1.1rem;
         font-weight: 600;
-      }
-      .btn-navbar {
-        background-color: $color_darken_blue;
-        color: $color_verylight_green;
-        border-end-end-radius: 14px;
-        transition: 400ms;
-      }
-      .btn-navbar:hover {
-        background-color: $color_verylight_green;
-        color: $color_darken_blue;
+        .btn-navbar {
+          background-color: $color_darken_blue;
+          color: $color_verylight_green;
+          border-end-end-radius: 14px;
+          transition: 400ms;
+        }
+        .btn-navbar:hover {
+          background-color: $color_verylight_green;
+          color: $color_darken_blue;
+        }
       }
     }
   }

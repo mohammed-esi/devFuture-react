@@ -48,17 +48,24 @@ $(document).ready(function () {
     pause: 'hover',
     wrap: true,
   });
+
+  // Menu Slide
+  function openNav() {
+    document.getElementById('mySidenav').style.width = '100%';
+    document.getElementById('dashboard').style.marginLeft = 0;
+    document.getElementById('main-footer').style.marginLeft = 0;
+  }
+
+  function closeNav() {
+    document.getElementById('mySidenav').style.width = 0;
+    document.getElementById('dashboard').style.marginLeft = 0;
+    document.getElementById('main-footer').style.marginLeft = 0;
+  }
+
+  $('.openbtn').on('click', function () {
+    openNav();
+  });
+  $('.closebtn').on('click', function () {
+    closeNav();
+  });
 });
-
-// Menu Slide
-function openNav() {
-  document.getElementById('mySidenav').style.width = '100%';
-  document.getElementById('dashboard').style.marginLeft = '0';
-  document.getElementById('main-footer').style.marginLeft = '0';
-}
-
-function closeNav() {
-  document.getElementById('mySidenav').style.width = '0';
-  document.getElementById('dashboard').style.marginLeft = '0';
-  document.getElementById('main-footer').style.marginLeft = '0';
-}
