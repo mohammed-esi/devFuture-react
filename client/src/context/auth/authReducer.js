@@ -40,6 +40,7 @@ export default (state, action) => {
     case LOGIN_FAIL:
     case LOGIN_FACEBOOK_FAIL:
     case LOGIN_GOOGLE_FAIL:
+    case LOGOUT:
       localStorage.removeItem('token');
       return {
         ...state,

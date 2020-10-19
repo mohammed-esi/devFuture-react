@@ -1,7 +1,19 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useContext } from 'react';
+import AuthContext from '../../context/auth/authContext';
+import { Redirect } from 'react-router-dom'
 import persontwo from '../../img/person-two.png';
 
 export default function DashboardSideNav() {
+  const authcontext = useContext(AuthContext);
+
+  const {logout} = authcontext;
+
+  const onLgout = () => {
+    logout();
+    return <Redirect to='/login' />
+  }
+
+
   return (
     <Fragment>
       {/* Nav Side */}
@@ -49,7 +61,7 @@ export default function DashboardSideNav() {
               </h6>
               <hr className='mx-4 my-4' />
               <h6 className='mt-4'>
-                <a href='./login.html'>
+                <a href='#' onClick={onLgout}>
                   <i className='fas fa-sign-out-alt mr-3' /> Logout
                 </a>
               </h6>

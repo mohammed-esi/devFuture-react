@@ -1,5 +1,7 @@
 import React, { Fragment } from 'react';
 import DashboardSideNav from './DashboardSideNav';
+import Education from './Education';
+import Experience from './Experience';
 
 const Dashboard = () => {
   return (
@@ -34,101 +36,10 @@ const Dashboard = () => {
               </div>
               <div className='row my-5 row-content'>
                 <div className='col-lg-6'>
-                  <div className='card px-2'>
-                    <div className='card-body'>
-                      <h3 className='my-4'>Experience Credentials</h3>
-                      <div className='my-3'>
-                        <table className='table mr-4'>
-                          <thead>
-                            <tr>
-                              <th scope='col'>Company</th>
-                              <th scope='col'>Title</th>
-                              <th scope='col'>Years</th>
-                              <th scope='col' />
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td>Mark</td>
-                              <td>Otto</td>
-                              <td>Otto</td>
-                              <td>
-                                <button className='btn btn-card btn-lg'>
-                                  <i className='fas fa-trash mr-2' />
-                                  Delete
-                                </button>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>Jacob</td>
-                              <td>Thornton</td>
-                              <td>Otto</td>
-                              <td>
-                                <button className='btn btn-card btn-lg'>
-                                  <i className='fas fa-trash mr-2' />
-                                  Delete
-                                </button>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>Larry</td>
-                              <td>Otto</td>
-                              <td>the Bird</td>
-                              <td>
-                                <button className='btn btn-card btn-lg'>
-                                  <i className='fas fa-trash mr-2' />
-                                  Delete
-                                </button>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                  </div>
+                  <Education />
                 </div>
                 <div className='col-lg-6'>
-                  <div className='card px-2'>
-                    <div className='card-body'>
-                      <h3 className='my-4'>Education Credentials</h3>
-                      <div className='my-3'>
-                        <table className='table mr-4'>
-                          <thead>
-                            <tr>
-                              <th scope='col'>Scool</th>
-                              <th scope='col'>Degree</th>
-                              <th scope='col'>Years</th>
-                              <th scope='col' />
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td>Mark</td>
-                              <td>Otto</td>
-                              <td>Otto</td>
-                              <td>
-                                <button className='btn btn-card btn-lg'>
-                                  <i className='fas fa-trash mr-2' />
-                                  Delete
-                                </button>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>Jacob</td>
-                              <td>Thornton</td>
-                              <td>Thornton</td>
-                              <td>
-                                <button className='btn btn-card btn-lg'>
-                                  <i className='fas fa-trash mr-2' />
-                                  Delete
-                                </button>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                  </div>
+                  <Experience />
                 </div>
               </div>
               <div className='row my-4 row-btn'>
