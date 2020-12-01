@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useContext, useEffect } from 'react';
 import NavbarWelcome from '../layout/NavbarWelcome';
 import FooterWelcome from '../layout/FooterWelcome';
 import imgprovider from '../../img/provider.svg';

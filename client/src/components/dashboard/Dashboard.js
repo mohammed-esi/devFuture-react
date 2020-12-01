@@ -1,7 +1,7 @@
-import React, { Fragment } from 'react';
-import DashboardSideNav from './DashboardSideNav';
-import Education from './Education';
-import Experience from './Experience';
+import React, {Fragment} from 'react';
+import DashboardSideNav from './DashboardSideNav'
+import Education from './Education'
+import Experience from './Experience'
 
 const Dashboard = () => {
   return (
@@ -57,7 +57,7 @@ const Dashboard = () => {
         </div>
       </section>
     </Fragment>
-  );
+  )
 };
 
 export default Dashboard;
