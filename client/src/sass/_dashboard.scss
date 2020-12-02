@@ -4,7 +4,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  transition: margin-left 0.5s;
+  // transition: margin-left 0.5s;
   padding: 16px;
   .btn:focus {
     box-shadow: none;
@@ -90,14 +90,14 @@
 
 .sidenav {
   height: 100%;
-  width: 0;
+  width: 0%;
   position: fixed;
   z-index: 1;
   top: 0;
   left: 0;
   background-color: $color_darken_blue;
   overflow-x: hidden;
-  transition: 0.5s;
+  transition: width 0.5s;
   padding-top: 60px;
   color: $color_lighten;
   .closebtn {
@@ -139,4 +139,9 @@
   hr {
     border-top: 1px solid $color_lighten_green;
   }
+}
+
+.visible {
+  width: 100%;
+  transition: width 0.5s;
 }
