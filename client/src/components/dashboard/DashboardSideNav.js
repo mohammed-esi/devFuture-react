@@ -5,6 +5,9 @@ import persontwo from '../../img/person-two.png';
 
 export default function DashboardSideNav() {
   const authcontext = useContext(AuthContext);
+  const [sidebar, setSidebar] = useState(false);
+
+  const showSidebar = () => setSidebar(!sidebar);
 
   const {logout} = authcontext;
 
@@ -17,8 +20,8 @@ export default function DashboardSideNav() {
   return (
     <Fragment>
       {/* Nav Side */}
-      <div id='mySidenav' className='sidenav'>
-        <button className='btn closebtn'>×</button>
+      <div className='sidenav'>
+        <button className='btn closebtn' onClick={showSidebar}>×</button>
         <div className='container'>
           <div className='d-flex flex-column pt-4 pb-5'>
             <div className='d-flex justify-content-center'>
