@@ -8,14 +8,13 @@ import NotFound from '../pages/NotFound';
 import PrivateRoute from './PrivateRoute';
 
 const Routes = () => {
-  // After fix the bugs of routes
-  // const authContext = useContext(AuthContext)
-  // const {loadUser} = authContext;
+  const authContext = useContext(AuthContext)
+  const {loadUser} = authContext;
 
-  // useEffect(() => {
-  //   loadUser()
-  //   // eslint-disable-next-line
-  // }, []);
+  useEffect(() => {
+    loadUser()
+    // eslint-disable-next-line
+  }, []);
   return (
     <Switch>
       <Route exact path='/login' component={Login} />

@@ -22,12 +22,15 @@ const Login = (props) => {
   } = authContext;
 
   useEffect(() => {
+    if (isAuthenticated) {
+      props.history.push('/dashboard');
+    }
     if (error === 'Invalid Credentials') {
       setAlert('password or email is not correct', 'danger');
       clearErrors();
     }
     // eslint-disable-next-line
-  }, [error]);
+  }, [error, isAuthenticated, props.history]);
 
   const [user, setUser] = useState({
     email: '',
@@ -50,9 +53,9 @@ const Login = (props) => {
     }
   };
 
-  if (isAuthenticated) {
-    return <Redirect to='/dashboard' />;
-  }
+  // if (isAuthenticated) {
+  //   return <Redirect to='/dashboard' />;
+  // }
 
   return (
     <section id='login'>
