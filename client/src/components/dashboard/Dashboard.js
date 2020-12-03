@@ -1,6 +1,6 @@
 import React, {Fragment, useContext, useState} from 'react';
 import AuthContext from '../../context/auth/authContext';
-import { Redirect } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import persontwo from '../../img/person-two.png';
 // import DashboardSideNav from './DashboardSideNav'
 import Education from './Education'
@@ -12,7 +12,7 @@ const Dashboard = () => {
 
   const showSidebar = () => setSidebar(!sidebar);
 
-  const {logout} = authcontext;
+  const {logout, user} = authcontext;
 
   const onLgout = () => {
     logout();
@@ -35,7 +35,7 @@ const Dashboard = () => {
             </div>
             <div className='d-flex justify-content-center my-4'>
               <a href='./profile.html'>
-                <h5>Z. Mohammed Elamine</h5>
+                <h5>{user && user.firstName[0].toUpperCase() + '. ' + user.lastName}</h5>
               </a>
             </div>
             <div className='d-flex flex-column justify-content-start'>
@@ -50,19 +50,19 @@ const Dashboard = () => {
                 </a>
               </h6>
               <h6 className='mt-4'>
-                <a href='./create-profile.html'>
-                  <i className='fas fa-user-circle mr-3' /> Add Profile
-                </a>
+                <Link to='/create-profile'>
+                  <i className='fas fa-user-circle mr-3' /> Edit Profile
+                </Link>
               </h6>
               <h6 className='mt-4'>
-                <a href='./add-educaction.html'>
+                <Link to='/edit-education'>
                   <i className='fas fa-graduation-cap mr-3' /> Edit Education
-                </a>
+                </Link>
               </h6>
               <h6 className='mt-4'>
-                <a href='./add-experience.html'>
+                <Link to='/edite-experience'>
                   <i className='fab fa-black-tie mr-3' /> Edit Experience
-                </a>
+                </Link>
               </h6>
               <hr className='mx-4 my-4' />
               <h6 className='mt-4'>
@@ -91,7 +91,7 @@ const Dashboard = () => {
                       <h1 className='display-4 my-2'>Dashborad</h1>
                       <h3 className='my-3'>
                         <i className='fas fa-user-tag mr-2' />
-                        Welcome Zighed Mohammed Elamine
+                        Welcome {user && user.firstName + ' ' + user.lastName}
                       </h3>
                       <p className='my-3 lead'>
                         here you can control your profile and edit or delete

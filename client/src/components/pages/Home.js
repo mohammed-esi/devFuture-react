@@ -1,6 +1,11 @@
 import React, { Fragment, useContext, useEffect } from 'react';
+import AuthContext from '../../context/auth/authContext'
+import { Redirect } from 'react-router-dom'
 import NavbarWelcome from '../layout/NavbarWelcome';
 import FooterWelcome from '../layout/FooterWelcome';
+
+
+
 import imgprovider from '../../img/provider.svg';
 import imgidea from '../../img/idea.svg';
 import imgcomment from '../../img/comment.svg';
@@ -14,6 +19,18 @@ import imgpersonthree from '../../img/person-three.png';
 import imgpersontwo from '../../img/person-two.png';
 
 const Home = () => {
+  const authContext = useContext(AuthContext);
+  const { isAuthenticated, loadUser } = authContext
+
+  useEffect(() => {
+    loadUser()
+    // eslint-disable-next-line
+  }, []);
+
+  if (isAuthenticated) {
+    return <Redirect to='/dashboard' />
+  }
+  
   return (
     <Fragment>
       {/* Header */}
