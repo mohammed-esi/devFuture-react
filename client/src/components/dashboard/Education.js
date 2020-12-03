@@ -17,17 +17,19 @@ export default function Education() {
             </thead>
             <tbody>
               <tr>
-                <td>Mark</td>
+              <td>Null</td>
+              <td>Null</td>
+                {/* <td>Mark</td>
                 <td>Otto</td>
-                <td>Otto</td>
+                <td>Otto</td> */}
                 <td>
-                  <button className='btn btn-card btn-lg'>
+                  {/* <button className='btn btn-card btn-lg'>
                     <i className='fas fa-trash mr-2' />
                     Delete
-                  </button>
+                  </button> */}
                 </td>
               </tr>
-              <tr>
+              {/* <tr>
                 <td>Jacob</td>
                 <td>Thornton</td>
                 <td>Thornton</td>
@@ -37,7 +39,7 @@ export default function Education() {
                     Delete
                   </button>
                 </td>
-              </tr>
+              </tr> */}
             </tbody>
           </table>
         </div>

@@ -17,17 +17,19 @@ export default function Experience() {
             </thead>
             <tbody>
               <tr>
-                <td>Mark</td>
+              <td>Null</td>
+              <td>Null</td>
+                {/* <td>Mark</td>
                 <td>Otto</td>
-                <td>Otto</td>
+                <td>Otto</td> */}
                 <td>
-                  <button className='btn btn-card btn-lg'>
+                  {/* <button className='btn btn-card btn-lg'>
                     <i className='fas fa-trash mr-2' />
                     Delete
-                  </button>
+                  </button> */}
                 </td>
               </tr>
-              <tr>
+              {/* <tr>
                 <td>Jacob</td>
                 <td>Thornton</td>
                 <td>Otto</td>
@@ -37,8 +39,8 @@ export default function Experience() {
                     Delete
                   </button>
                 </td>
-              </tr>
-              <tr>
+              </tr> */}
+              {/* <tr>
                 <td>Larry</td>
                 <td>Otto</td>
                 <td>the Bird</td>
@@ -48,7 +50,7 @@ export default function Experience() {
                     Delete
                   </button>
                 </td>
-              </tr>
+              </tr> */}
             </tbody>
           </table>
         </div>
