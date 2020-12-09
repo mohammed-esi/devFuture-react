@@ -8,6 +8,8 @@ import {
   GET_PROFILES,
   PROFILE_ERROR,
   UPDATE_PROFILE,
+  DELETE_EDUCATION,
+  DELETE_EXPERIENCE,
   CLEAR_PROFILE,
   ACCOUNT_DELETED,
   GET_REPOS,
@@ -15,6 +17,9 @@ import {
 } from '../types'
 
 const ProfileState = (props) => {
+  const alertContext = useContext(AlertContext);
+  const {setAlert} = alertContext
+  
   const initialState = {
     profile: null,
     profiles: [],
@@ -26,8 +31,6 @@ const ProfileState = (props) => {
 
   const [state, dispatch] = useReducer(profileReducer, initialState);
 
-  const alertContext = useContext(AlertContext);
-  const { setAlert } = alertContext;
   
   // Get current users profile
   const getCurrentProfile = async () => {
@@ -40,7 +43,7 @@ const ProfileState = (props) => {
     } catch (err) {
       dispatch({
         type: PROFILE_ERROR,
-        payload: {msg: err.response.statusText , status: err.response.status}
+        payload: { msg: err.response.statusText, status: err.response.status }
       })
     }
   }
@@ -48,7 +51,7 @@ const ProfileState = (props) => {
 
 
   // Create or Update profile
-  const createProfile = async (formatDate, history, edit = false) => {
+  const createProfile = async (formaData) => {
     const config = {
       headers: {
         'Content-Type': 'application/json',
@@ -56,30 +59,110 @@ const ProfileState = (props) => {
     };
 
     try {
-      const res = await axios.post('/api/profile', formatDate, config);
+      const res = await axios.post('/api/profile', formaData, config);
       dispatch({
         type: GET_PROFILE,
         payload: res.data,
       })
-
-      dispatch(setAlert(edit ? 'Profile Updated' : 'Profile Created' , 'success'));
-
-      if (!edit) {
-        history.push('/dashboard');
-      }
     } catch (err) {
-      const errors = err.response.data.errors
+      dispatch({
+        type: PROFILE_ERROR,
+        payload: err.response.data.errors
+      });
+    }
+  }
 
-      if (errors) {
-        errors.forEach((error) => dispatch(setAlert(error.msg, 'danger')))
-      }
+  // Add experience
+  const addExperience = async (formaData) => {
+    const config = {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    };
 
+    try {
+      const res = await axios.put('/api/profile/experience', formaData, config);
+      dispatch({
+        type: UPDATE_PROFILE,
+        payload: res.data
+      }, setAlert('Experience added in your profile.', 'success'))
+    } catch (err) {
+      // const errors = err.response.data.errors;
+      // if (errors) {
+      //   errors.forEach((error) => dispatch( {type: null}, setAlert(error.msg, 'danger')));
+      // }
       dispatch({
         type: PROFILE_ERROR,
         payload: { msg: err.response.statusText, status: err.response.status }
       });
     }
   }
+
+
+  // Delete Experience
+  const deleteExperience = async (id) => {
+    try {
+      await axios.delete(`/api/profile/experience/${id}`)
+      dispatch({
+        type: DELETE_EXPERIENCE,
+        payload: id
+      }, setAlert('Education Removed!', 'success'))
+    } catch (err) {
+      dispatch({
+        type: PROFILE_ERROR,
+        payload: { msg: err.response.statusText, status: err.response.status }
+      });
+    }
+  }
+
+
+
+  // Add education
+  const addEducation = async (formaData) => {
+    const config = {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    };
+
+    try {
+      const res = await axios.put('/api/profile/education', formaData, config);
+      dispatch({
+        type: UPDATE_PROFILE,
+        payload: res.data
+      }, setAlert('Education added in your profile.', 'success'))
+    } catch (err) {
+      // const errors = err.response.data.errors;
+      // if (errors) {
+      //   errors.forEach((error) => dispatch( {type: null}, setAlert(error.msg, 'danger')));
+      // }
+      dispatch({
+        type: PROFILE_ERROR,
+        payload: { msg: err.response.statusText, status: err.response.status }
+      });
+    }
+  }
+
+  // Delete Educaition
+  const deleteEducation = async (id) => {
+    try {
+      await axios.delete(`/api/profile/education/${id}`)
+      dispatch({
+        type: DELETE_EDUCATION,
+        payload: id
+      }, setAlert('Education Removed!', 'success'))
+    } catch (err) {
+      dispatch({
+        type: PROFILE_ERROR,
+        payload: { msg: err.response.statusText, status: err.response.status }
+      });
+    }
+  }
+
+
+
+  // Clear profile
+  const cleareProfile = () => dispatch({ type: CLEAR_PROFILE })
 
 
 
@@ -91,7 +174,12 @@ const ProfileState = (props) => {
       error: state.error,
       loading: state.loading,
       getCurrentProfile,
-      createProfile
+      createProfile,
+      cleareProfile,
+      addEducation,
+      addExperience,
+      deleteEducation,
+      deleteExperience
     }} >
       {props.children}
     </ProfileContext.Provider>
