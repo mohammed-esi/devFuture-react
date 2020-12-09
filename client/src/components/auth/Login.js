@@ -2,13 +2,15 @@ import React, { useEffect, useContext, useState } from 'react';
 import imglogin from '../../img/login.svg';
 import AlerContext from '../../context/alert/alertContext';
 import AuthContext from '../../context/auth/authContext';
+import ProfileContext from '../../context/profile/profileContext'
 import Alert from '../layout/Alert';
 import Loading from '../layout/Loading';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Login = (props) => {
   const alertConetxt = useContext(AlerContext);
   const authContext = useContext(AuthContext);
+  const profileContext = useContext(ProfileContext)
 
   const { setAlert } = alertConetxt;
   const {
@@ -20,6 +22,7 @@ const Login = (props) => {
     loginFacebook,
     loginGoogle,
   } = authContext;
+  const { getCurrentProfile } = profileContext
 
   useEffect(() => {
     if (isAuthenticated) {
@@ -29,6 +32,7 @@ const Login = (props) => {
       setAlert('password or email is not correct', 'danger');
       clearErrors();
     }
+    getCurrentProfile()
     // eslint-disable-next-line
   }, [error, isAuthenticated, props.history]);
 

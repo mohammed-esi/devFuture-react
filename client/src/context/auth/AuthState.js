@@ -17,7 +17,7 @@ import {
   LOGIN_FACEBOOK,
   LOGIN_FACEBOOK_FAIL,
   LOGIN_GOOGLE,
-  LOGIN_GOOGLE_FAIL,
+  LOGIN_GOOGLE_FAIL
 } from '../types';
 
 const AuthState = (props) => {
