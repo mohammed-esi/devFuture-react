@@ -1,8 +1,16 @@
-import React from 'react'
+import React, { Fragment, useContext } from 'react'
+import ProfileContext from '../../context/profile/profileContext'
+import ExperienceItem from './ExperienceItem'
 
 export default function Experience() {
+  const profileContext = useContext(ProfileContext)
+
+  const { profile, loading } = profileContext;
+
+
   return (
-    <div className='card px-2'>
+    <Fragment>
+      <div className='card px-2'>
       <div className='card-body'>
         <h3 className='my-4'>Experience Credentials</h3>
         <div className='my-3'>
@@ -16,45 +24,21 @@ export default function Experience() {
               </tr>
             </thead>
             <tbody>
-              <tr>
-              <td>Null</td>
-              <td>Null</td>
-                {/* <td>Mark</td>
-                <td>Otto</td>
-                <td>Otto</td> */}
-                <td>
-                  {/* <button className='btn btn-card btn-lg'>
-                    <i className='fas fa-trash mr-2' />
-                    Delete
-                  </button> */}
-                </td>
+            {profile && !loading && profile.experience.length !== 0 ? (
+              profile.experience.map((experience) => ( <ExperienceItem experience={experience} /> ))
+            ) : (
+              <tr className="text-center">
+                <td>/</td>
+                <td>/</td>
+                <td>/</td>
+                <td></td>
               </tr>
-              {/* <tr>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>Otto</td>
-                <td>
-                  <button className='btn btn-card btn-lg'>
-                    <i className='fas fa-trash mr-2' />
-                    Delete
-                  </button>
-                </td>
-              </tr> */}
-              {/* <tr>
-                <td>Larry</td>
-                <td>Otto</td>
-                <td>the Bird</td>
-                <td>
-                  <button className='btn btn-card btn-lg'>
-                    <i className='fas fa-trash mr-2' />
-                    Delete
-                  </button>
-                </td>
-              </tr> */}
+            )}
             </tbody>
           </table>
         </div>
       </div>
     </div>
+    </Fragment>
   )
 }

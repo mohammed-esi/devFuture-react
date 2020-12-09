@@ -1,21 +1,34 @@
-import React, {Fragment, useContext, useState} from 'react';
+import React, {Fragment, useContext, useState, useEffect} from 'react';
 import AuthContext from '../../context/auth/authContext';
-import { Link, Redirect } from 'react-router-dom'
-import persontwo from '../../img/person-two.png';
+import ProfileContext from '../../context/profile/profileContext'
 // import DashboardSideNav from './DashboardSideNav'
 import Education from './Education'
 import Experience from './Experience'
+import { Link, Redirect } from 'react-router-dom'
+
+
+import persontwo from '../../img/person-two.png';
+
 
 const Dashboard = () => {
   const authcontext = useContext(AuthContext);
+  const profileContext = useContext(ProfileContext);
   const [sidebar, setSidebar] = useState(false);
 
   const showSidebar = () => setSidebar(!sidebar);
 
   const {logout, user} = authcontext;
+  const { profile, getCurrentProfile, cleareProfile } = profileContext;
+
+  useEffect(() => {
+    getCurrentProfile()
+    // eslint-disable-next-line
+  }, [])
+
 
   const onLgout = () => {
     logout();
+    cleareProfile()
     return <Redirect to='/login' />
   }
 
@@ -49,21 +62,33 @@ const Dashboard = () => {
                   <i className='fas fa-code mr-3' /> Developers
                 </a>
               </h6>
-              <h6 className='mt-4'>
-                <Link to='/create-profile'>
-                  <i className='fas fa-user-circle mr-3' /> Edit Profile
-                </Link>
-              </h6>
-              <h6 className='mt-4'>
-                <Link to='/edit-education'>
-                  <i className='fas fa-graduation-cap mr-3' /> Edit Education
-                </Link>
-              </h6>
-              <h6 className='mt-4'>
-                <Link to='/edite-experience'>
-                  <i className='fab fa-black-tie mr-3' /> Edit Experience
-                </Link>
-              </h6>
+              {profile ? (
+                <Fragment>
+                  <h6 className='mt-4'>
+                    <Link to='/edit-profile'>
+                      <i className='fas fa-user-circle mr-3' /> Edit Profile
+                    </Link>
+                  </h6>
+                  <h6 className='mt-4'>
+                    <Link to='/edit-education'>
+                      <i className='fas fa-graduation-cap mr-3' /> Edit Education
+                    </Link>
+                  </h6>
+                  <h6 className='mt-4'>
+                    <Link to='/edit-experience'>
+                      <i className='fab fa-black-tie mr-3' /> Edit Experience
+                    </Link>
+                  </h6>
+                </Fragment>
+              ) : (
+                <Fragment>
+                  <h6 className='mt-4'>
+                    <Link to='/create-profile'>
+                          <i className='fas fa-user-circle mr-3' /> Create Profile
+                    </Link>
+                  </h6>
+                </Fragment>
+              )}
               <hr className='mx-4 my-4' />
               <h6 className='mt-4'>
                 <a href='#' onClick={onLgout}>
