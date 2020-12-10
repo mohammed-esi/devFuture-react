@@ -1,9 +1,23 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
+import React, { useContext } from 'react'
+import { Link } from 'react-router-dom'
+import AuthContext from '../../context/auth/authContext'
+import ProfileContext from '../../context/profile/profileContext'
 import logo from '../../img/LogoMaker.png';
 
 
 const Navbar = () => {
+  const authContext = useContext(AuthContext)
+  const profileContext = useContext(ProfileContext)
+
+  const { loading, isAuthenticated, logout } = authContext;
+  const { clearProfile } = profileContext
+
+  const onLogout = () => {
+    logout();
+    clearProfile()
+  }
+
+
   return (
     // NavBar
     <nav className="navbar navbar-expand-md navbar-user navbar-light py-3" id="main-nav">
@@ -14,20 +28,34 @@ const Navbar = () => {
         <i className="fas fa-bars" />
       </button>
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul className="navbar-nav ml-auto">
-          <li className="nav-item mx-3">
-            <Link className="nav-link" to='/dashboard'>Developers</Link>
-          </li>
-          <li className="nav-item mx-3">
-            <Link className="nav-link" to='/dashboard'>Services</Link>
-          </li>
-          <li className="nav-item mx-3">
-            <Link href='dashboard' className="nav-link">Dashboard</Link>
-          </li>
-          <li className="nav-item mx-3">
-            <a href='#' className="nav-link">Logout <i className="fas fa-sign-out-alt ml-2" /></a>
-          </li>
-        </ul>
+        {isAuthenticated && !loading ? (
+          <ul className="navbar-nav ml-auto">
+            <li className="nav-item mx-3">
+              <Link className="nav-link" to='/dashboard'>Developers</Link>
+            </li>
+            <li className="nav-item mx-3">
+              <Link className="nav-link" to='/dashboard'>Services</Link>
+            </li>
+            <li className="nav-item mx-3">
+              <Link className="nav-link" to='/dashboard'>Dashboard</Link>
+            </li>
+            <li className="nav-item mx-3">
+              <Link onClick={onLogout} className="nav-link">Logout <i className="fas fa-sign-out-alt ml-2" /></Link>
+            </li>
+          </ul>
+        ) : (
+          <ul className="navbar-nav ml-auto">
+            <li className="nav-item mx-3">
+              <Link className="nav-link" to='/'>Developers</Link>
+            </li>
+            <li className="nav-item mx-3">
+              <Link className="nav-link" to='/getStarted'>Sign Up</Link>
+            </li>
+            <li className="nav-item mx-3">
+              <Link className="nav-link" to='/login'>Login</Link>
+            </li>
+          </ul>
+        )}
       </div>
     </nav>
   )
