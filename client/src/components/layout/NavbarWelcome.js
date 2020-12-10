@@ -41,8 +41,8 @@ const NavbarWelcome = () => {
               Login <i className='fas fa-sign-in-alt ml-2' />
             </Link>
           </li>
-          <li className='nav-item ml-22'>
-            <Link className='nav-btn btn btn-navbar btn-lg' to='/getStarted'>
+          <li className='nav-item ml-22 nav-btn'>
+            <Link className='btn btn-navbar btn-lg' to='/getStarted'>
               Get Started
             </Link>
           </li>
