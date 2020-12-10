@@ -1,16 +1,16 @@
 import React, {Fragment, useContext, useState, useEffect} from 'react';
 import AuthContext from '../../context/auth/authContext';
 import ProfileContext from '../../context/profile/profileContext'
-// import DashboardSideNav from './DashboardSideNav'
 import Education from './Education'
 import Experience from './Experience'
-import { Link, Redirect } from 'react-router-dom'
+import Loading from '../layout/Loading'
+import { Link } from 'react-router-dom'
 
 
 import persontwo from '../../img/person-two.png';
 
 
-const Dashboard = () => {
+const Dashboard = (props) => {
   const authcontext = useContext(AuthContext);
   const profileContext = useContext(ProfileContext);
   const [sidebar, setSidebar] = useState(false);
@@ -18,7 +18,9 @@ const Dashboard = () => {
   const showSidebar = () => setSidebar(!sidebar);
 
   const {logout, user} = authcontext;
-  const { profile, getCurrentProfile, cleareProfile } = profileContext;
+  const { profile, getCurrentProfile, clearProfile, deleteAccount } = profileContext;
+
+  const [ displayLoading, setDispalyLoading ] = useState(false)
 
   useEffect(() => {
     getCurrentProfile()
@@ -26,15 +28,24 @@ const Dashboard = () => {
   }, [])
 
 
-  const onLgout = () => {
+  const onLogout = () => {
     logout();
-    cleareProfile()
-    return <Redirect to='/login' />
+    clearProfile()
+  }
+
+  const onDelete = () => {
+    setDispalyLoading(!displayLoading)
+    setTimeout(() => {
+      deleteAccount();
+      logout();
+      setDispalyLoading(displayLoading)
+      props.history.push('/login')
+    }, 2000)
   }
 
   return (
     <Fragment>
-      {/* <DashboardSideNav /> */}
+      {/* Dashboard Side Bar */}
       <div className={sidebar ? 'sidenav visible' : 'sidenav'}>
         <button className='btn closebtn' onClick={showSidebar}>×</button>
         <div className='container'>
@@ -91,9 +102,9 @@ const Dashboard = () => {
               )}
               <hr className='mx-4 my-4' />
               <h6 className='mt-4'>
-                <a href='#' onClick={onLgout}>
+                <Link onClick={onLogout}>
                   <i className='fas fa-sign-out-alt mr-3' /> Logout
-                </a>
+                </Link>
               </h6>
             </div>
           </div>
@@ -110,7 +121,7 @@ const Dashboard = () => {
           <div className='col-11'>
             <div className='container'>
               <div className='row row-header'>
-                <div className='card my-5'>
+                <div className='card mt-5 mb-2'>
                   <div className='card-body'>
                     <div className='d-flex flex-column mt-5 mb-3'>
                       <h1 className='display-4 my-2'>Dashborad</h1>
@@ -127,20 +138,26 @@ const Dashboard = () => {
                 </div>
               </div>
               <div className='row my-5 row-content'>
-                <div className='col-lg-6'>
+                <div className='col-sm-12 my-3'>
                   <Education />
                 </div>
-                <div className='col-lg-6'>
+                <div className='col-sm-12 my-3'>
                   <Experience />
                 </div>
               </div>
               <div className='row my-4 row-btn'>
                 <div className='col'>
                   <div className='d-flex justify-content-end'>
-                    <button className='btn btn-footer btn-lg'>
-                      <i className='fas fa-user-slash mr-2' />
-                      Delete Your Profile
+                  {displayLoading ? (
+                    <button className="btn btn-footer btn-lg px-5 py-2" disabled>
+                      <Loading />
                     </button>
+                  ) : (
+                    <button className='btn btn-footer btn-lg' onClick={onDelete}>
+                      <i className='fas fa-user-slash mr-2' />
+                      Delete Your Account
+                    </button>
+                  )}
                   </div>
                 </div>
               </div>

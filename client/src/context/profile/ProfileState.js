@@ -11,7 +11,6 @@ import {
   DELETE_EDUCATION,
   DELETE_EXPERIENCE,
   CLEAR_PROFILE,
-  ACCOUNT_DELETED,
   GET_REPOS,
   NO_REPOS
 } from '../types'
@@ -160,9 +159,24 @@ const ProfileState = (props) => {
   }
 
 
+  // Delete Account
+  const deleteAccount = async () => {
+    if (window.confirm('Are you sure? This can NOT be undone!')) {
+      try {
+        await axios.delete('/api/profile/');
+        dispatch({ type: CLEAR_PROFILE }, setAlert('Your account has been deleted', 'success'))
+      } catch (err) {
+        dispatch({
+          type: PROFILE_ERROR,
+          payload: { msg: err.response.statusText, status: err.response.status }
+        });
+      }
+    }
+  }
+
 
   // Clear profile
-  const cleareProfile = () => dispatch({ type: CLEAR_PROFILE })
+  const clearProfile = () => dispatch({ type: CLEAR_PROFILE })
 
 
 
@@ -175,11 +189,12 @@ const ProfileState = (props) => {
       loading: state.loading,
       getCurrentProfile,
       createProfile,
-      cleareProfile,
+      clearProfile,
       addEducation,
       addExperience,
       deleteEducation,
-      deleteExperience
+      deleteExperience,
+      deleteAccount
     }} >
       {props.children}
     </ProfileContext.Provider>
