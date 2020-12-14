@@ -6,5 +6,6 @@
   "googleClientId": "589003218366-g6qbvf0nm09e8br1m945id6bdrt5trbq.apps.googleusercontent.com",
   "googleClientSecret": "Xxc5GoDW_FTDKT7_VddZbvyJ",
   "facebookClientId": "3467834949924107",
-  "facebookClientSecret": "190e03d3b72ecbcb233c9a248001ad8e"
+  "facebookClientSecret": "190e03d3b72ecbcb233c9a248001ad8e",
+  "githubToken": "e1e8f1fac753cde5880b88e040b3c007fe402d4d"
 }
