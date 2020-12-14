@@ -29,6 +29,10 @@ const Login = (props) => {
       setAlert('password or email is not correct', 'danger');
       clearErrors();
     }
+    if (error === 'Email does not exist!') {
+      setAlert('Email does not exist!', 'danger');
+      clearErrors();
+    }
     // eslint-disable-next-line
   }, [error, isAuthenticated, props.history]);
 

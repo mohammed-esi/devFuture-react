@@ -44,7 +44,7 @@ router.post(
       if (!user) {
         return res
           .status(400)
-          .json({ success: false, msg: 'Invalid Credentials' });
+          .json({ success: false, msg: 'Email does not exist!' });
       }
 
       const isMatch = await bcrypt.compare(password, user.password);
