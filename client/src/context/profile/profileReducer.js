@@ -44,6 +44,17 @@ export default (state, action) => {
         profile: null,
         repos: []
       }
+    case GET_REPOS:
+      return {
+        ...state,
+        repos: action.payload,
+        loading: false
+      }
+    case NO_REPOS:
+      return {
+        ...state,
+        repos: []
+      }
     default:
       return state;
   }

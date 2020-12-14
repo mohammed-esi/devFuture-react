@@ -48,6 +48,40 @@ const ProfileState = (props) => {
   }
 
 
+  // Get profile by Id
+  const getProfileById = async (userId) => {
+    try {
+      const res = await axios.get(`/api/profile/user/${userId}`)
+      dispatch({
+        type: GET_PROFILE,
+        payload: res.data
+      })
+    } catch (err) {
+      dispatch({
+        type: PROFILE_ERROR,
+        payload: { msg: err.response.statusText, status: err.response.status }
+      })
+    }
+  }
+
+
+  // Get Github repos
+  const getGithubRepos = async (username) => {
+
+    try {
+      const res = await axios.get(`/api/profile/github/${username}`)
+      dispatch({
+        type: GET_REPOS,
+        payload: res.data
+      })
+    } catch (err) {
+      dispatch({
+        type: NO_REPOS
+      })
+    }
+  }
+
+
 
   // Create or Update profile
   const createProfile = async (formaData) => {
@@ -194,7 +228,9 @@ const ProfileState = (props) => {
       addExperience,
       deleteEducation,
       deleteExperience,
-      deleteAccount
+      deleteAccount,
+      getProfileById,
+      getGithubRepos
     }} >
       {props.children}
     </ProfileContext.Provider>
