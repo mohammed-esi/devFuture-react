@@ -7,7 +7,7 @@ import Loading from '../layout/Loading'
 import { Link } from 'react-router-dom'
 
 
-import persontwo from '../../img/person-two.png';
+// import persontwo from '../../img/person-two.png';
 
 
 const Dashboard = (props) => {
@@ -17,7 +17,7 @@ const Dashboard = (props) => {
 
   const showSidebar = () => setSidebar(!sidebar);
 
-  const {logout, user} = authcontext;
+  const {logout, user, loadUser} = authcontext;
   const { profile, getCurrentProfile, clearProfile, deleteAccount } = profileContext;
 
   const [ displayLoading, setDispalyLoading ] = useState(false)
@@ -52,15 +52,21 @@ const Dashboard = (props) => {
           <div className='d-flex flex-column pt-4 pb-5'>
             <div className='d-flex justify-content-center'>
               <img
-                src={persontwo}
+                src={user && user.avatar}
                 alt='smart'
                 className='img-fluid rounded-circle'
               />
             </div>
             <div className='d-flex justify-content-center my-4'>
-              <a href='./profile.html'>
-                <h5>{user && user.firstName[0].toUpperCase() + '. ' + user.lastName}</h5>
-              </a>
+              {user && profile ? (
+                <Link to={`/profile/${user._id}`}>
+                  <h5>{user.firstName[0].toUpperCase() + '. ' + user.lastName}</h5>
+                </Link>
+              ) : (
+                <Fragment>
+                  {user && (<h5>{user.firstName[0].toUpperCase() + '. ' + user.lastName}</h5>)}
+                </Fragment>
+              )}
             </div>
             <div className='d-flex flex-column justify-content-start'>
               <h6 className='mt-4'>
@@ -102,7 +108,7 @@ const Dashboard = (props) => {
               )}
               <hr className='mx-4 my-4' />
               <h6 className='mt-4'>
-                <Link onClick={onLogout}>
+                <Link to='#' onClick={onLogout}>
                   <i className='fas fa-sign-out-alt mr-3' /> Logout
                 </Link>
               </h6>

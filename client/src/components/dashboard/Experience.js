@@ -25,7 +25,7 @@ export default function Experience() {
             </thead>
             <tbody>
             {profile && !loading && profile.experience.length !== 0 ? (
-              profile.experience.map((experience) => ( <ExperienceItem experience={experience} /> ))
+              profile.experience.map((experience) => ( <ExperienceItem key={experience._id} experience={experience} /> ))
             ) : (
               <tr className="text-center">
                 <td>/</td>

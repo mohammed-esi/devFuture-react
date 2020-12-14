@@ -25,7 +25,7 @@ const Education = () => {
               </thead>
               <tbody>
                 {profile && !loading && profile.education.length !== 0 ? (
-                  profile.education.map((education) => ( <EducationItem education={education} /> ))
+                  profile.education.map((education) => ( <EducationItem key={education._id} education={education} /> ))
                 ) : (
                   <tr className="text-center">
                     <td>/</td>
