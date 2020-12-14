@@ -14,7 +14,7 @@ const Navbar = () => {
 
   const onLogout = () => {
     logout();
-    clearProfile()
+    // clearProfile();
   }
 
 
@@ -40,7 +40,7 @@ const Navbar = () => {
               <Link className="nav-link" to='/dashboard'>Dashboard</Link>
             </li>
             <li className="nav-item mx-3">
-              <Link onClick={onLogout} className="nav-link">Logout <i className="fas fa-sign-out-alt ml-2" /></Link>
+              <Link to='#' onClick={onLogout} className="nav-link">Logout <i className="fas fa-sign-out-alt ml-2" /></Link>
             </li>
           </ul>
         ) : (
