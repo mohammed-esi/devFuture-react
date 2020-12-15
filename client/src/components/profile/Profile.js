@@ -1,6 +1,5 @@
 import React, {Fragment, useContext, useEffect} from 'react'
 import ProfileContext from '../../context/profile/profileContext'
-import AuthContext from '../../context/auth/authContext'
 import ProfileHeader from './ProfileHeader'
 import ProfileAbout from './ProfileAbout'
 import ProfileEducation from './ProfileEducation'
@@ -11,23 +10,12 @@ import ProfileGithub from './ProfileGithub'
 
 const Profile = (props) => {
   const profileContext = useContext(ProfileContext)
-  const authContext = useContext(AuthContext)
-
-
   const { profile, getProfileById } = profileContext
-  const { user, isAuthenticated, loading } = authContext
 
   useEffect(() => {
     getProfileById(props.match.params.id)
-    if(!profile) {
-      if (isAuthenticated && !loading) {
-        props.history.push('/dashboard')
-      } else {
-        if (!isAuthenticated && !loading) props.history.push('/login')
-      }
-    }
     // eslint-disable-next-line
-  }, [props.match.params.id, props.history])
+  }, [props.match.params.id])
 
 
 
