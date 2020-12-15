@@ -11,6 +11,8 @@ import {
   DELETE_EDUCATION,
   DELETE_EXPERIENCE,
   CLEAR_PROFILE,
+  FILTER_PROFILES,
+  CLEAR_FILTER,
   GET_REPOS,
   NO_REPOS
 } from '../types'
@@ -22,6 +24,7 @@ const ProfileState = (props) => {
   const initialState = {
     profile: null,
     profiles: [],
+    filtered: null,
     repos: [],
     error: {},
     loading: true
@@ -37,6 +40,25 @@ const ProfileState = (props) => {
       const res = await axios.get('/api/profile/me');
       dispatch({
         type: GET_PROFILE,
+        payload: res.data
+      })
+    } catch (err) {
+      dispatch({
+        type: PROFILE_ERROR,
+        payload: { msg: err.response.statusText, status: err.response.status }
+      })
+    }
+  }
+
+
+  // Get all profiles
+  const getProfiles = async () => {
+    dispatch({ type: CLEAR_PROFILE })
+
+    try {
+      const res = await axios.get('/api/profile');
+      dispatch({
+        type: GET_PROFILES,
         payload: res.data
       })
     } catch (err) {
@@ -209,6 +231,18 @@ const ProfileState = (props) => {
   }
 
 
+  // Fiter profiles
+  const filterProfiles = (text) => {
+    dispatch({ type: FILTER_PROFILES, payload: text })
+  }
+
+
+  // Clear filtered
+  const clearFilter = () => {
+    dispatch({ type: CLEAR_FILTER })
+  }
+
+
   // Clear profile
   const clearProfile = () => dispatch({ type: CLEAR_PROFILE })
 
@@ -218,6 +252,7 @@ const ProfileState = (props) => {
     <ProfileContext.Provider value={{
       profile: state.profile,
       profiles: state.profiles,
+      filtered: state.filtered,
       repos: state.repos,
       error: state.error,
       loading: state.loading,
@@ -230,7 +265,10 @@ const ProfileState = (props) => {
       deleteExperience,
       deleteAccount,
       getProfileById,
-      getGithubRepos
+      getGithubRepos,
+      getProfiles,
+      filterProfiles,
+      clearFilter
     }} >
       {props.children}
     </ProfileContext.Provider>

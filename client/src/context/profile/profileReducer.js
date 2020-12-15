@@ -4,6 +4,8 @@ import {
   PROFILE_ERROR,
   UPDATE_PROFILE,
   CLEAR_PROFILE,
+  FILTER_PROFILES,
+  CLEAR_FILTER,
   GET_REPOS,
   NO_REPOS,
   DELETE_EDUCATION,
@@ -19,6 +21,12 @@ export default (state, action) => {
       return {
         ...state,
         profile: action.payload,
+        loading: false
+      }
+    case GET_PROFILES:
+      return {
+        ...state,
+        profiles: action.payload,
         loading: false
       }
     case DELETE_EDUCATION:
@@ -43,6 +51,19 @@ export default (state, action) => {
         ...state,
         profile: null,
         repos: []
+      }
+    case FILTER_PROFILES:
+      return {
+        ...state,
+        filtered: state.profiles.filter(profile => {
+          const regex = new RegExp(`${action.payload}`, 'gi');
+          return profile.user.firstName.match(regex) || profile.user.lastName.match(regex);
+        })
+      }
+    case CLEAR_FILTER:
+      return {
+        ...state,
+        filtered: null
       }
     case GET_REPOS:
       return {
