@@ -60,11 +60,11 @@ const Dashboard = (props) => {
             <div className='d-flex justify-content-center my-4'>
               {user && profile ? (
                 <Link to={`/profile/${user._id}`}>
-                  <h5>{user.firstName[0].toUpperCase() + '. ' + user.lastName}</h5>
+                  <h5>{user.firstName[0].toUpperCase() + '. ' + user.lastName.charAt(0).toUpperCase() + user.lastName.slice(1)}</h5>
                 </Link>
               ) : (
                 <Fragment>
-                  {user && (<h5>{user.firstName[0].toUpperCase() + '. ' + user.lastName}</h5>)}
+                  {user && (<h5>{user.firstName[0].toUpperCase() + '. ' + user.lastName.charAt(0).toUpperCase() + user.lastName.slice(1)}</h5>)}
                 </Fragment>
               )}
             </div>
@@ -75,9 +75,9 @@ const Dashboard = (props) => {
                 </a>
               </h6>
               <h6 className='mt-4'>
-                <a href='./developers.html'>
+                <Link to='/profiles'>
                   <i className='fas fa-code mr-3' /> Developers
-                </a>
+                </Link>
               </h6>
               {profile ? (
                 <Fragment>
