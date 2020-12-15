@@ -21,9 +21,15 @@ const Navbar = () => {
   return (
     // NavBar
     <nav className="navbar navbar-expand-md navbar-user navbar-light py-3" id="main-nav">
-      <Link className="navbar-brand ml-4 mr-6" to='/dashboard'>
-        <img src={logo} alt='Logo' className='img-fluid' />
-      </Link>
+      {isAuthenticated && !loading ? (
+        <Link className="navbar-brand ml-4 mr-6" to='/dashboard'>
+          <img src={logo} alt='Logo' className='img-fluid' />
+        </Link>
+      ) : (
+        <Link className="navbar-brand ml-4 mr-6" to='/'>
+          <img src={logo} alt='Logo' className='img-fluid' />
+        </Link>
+      )}
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <i className="fas fa-bars" />
       </button>
