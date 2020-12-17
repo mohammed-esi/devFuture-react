@@ -70,9 +70,9 @@ const Dashboard = (props) => {
             </div>
             <div className='d-flex flex-column justify-content-start'>
               <h6 className='mt-4'>
-                <a href='./services.html'>
+                <Link to='/services'>
                   <i className='fas fa-clone mr-3' /> Services
-                </a>
+                </Link>
               </h6>
               <h6 className='mt-4'>
                 <Link to='/profiles'>

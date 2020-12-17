@@ -29,23 +29,23 @@ const AddExperience = (props) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
   
-    const onSubmit = e => {
-      e.preventDefault();
-      if (title === '' || company === '') {
-        setAlert('Title and company required!', 'danger')
+  const onSubmit = e => {
+    e.preventDefault();
+    if (title === '' || company === '') {
+      setAlert('Title and company required!', 'danger')
+    } else {
+      if (to <= from && to || from === '') {
+        setAlert('From date is required and needs to be from to the past', 'danger')
       } else {
-        if (to <= from && to || from === '') {
-          setAlert('From date is required and needs to be from to the past', 'danger')
-        } else {
-          addExperience(formData)
-          setDispalyLoading(!displayLoading)
-          setTimeout(() => {
-            setDispalyLoading(displayLoading)
-            props.history.push('/dashboard')
-          }, 2000);
-          }
-      }
+        addExperience(formData)
+        setDispalyLoading(!displayLoading)
+        setTimeout(() => {
+          setDispalyLoading(displayLoading)
+          props.history.push('/dashboard')
+        }, 2000);
+        }
     }
+  }
   
 
 
@@ -105,7 +105,7 @@ const AddExperience = (props) => {
                     </div>
                     <div className="d-flex justify-content-center align-items-center">
                       {displayLoading ? (
-                      <button className="btn btn-card btn-lg px-5 mt-3 mb-4" type='submit' disabled>
+                      <button className="btn btn-card btn-lg px-5 mt-3 mb-4" disabled>
                         <Loading />
                       </button>
                       ) : (

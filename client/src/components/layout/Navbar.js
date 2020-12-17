@@ -37,10 +37,10 @@ const Navbar = () => {
         {isAuthenticated && !loading ? (
           <ul className="navbar-nav ml-auto">
             <li className="nav-item mx-3">
-              <Link className="nav-link" to='/dashboard'>Developers</Link>
+              <Link className="nav-link" to='/profiles'>Developers</Link>
             </li>
             <li className="nav-item mx-3">
-              <Link className="nav-link" to='/dashboard'>Services</Link>
+              <Link className="nav-link" to='/services'>Services</Link>
             </li>
             <li className="nav-item mx-3">
               <Link className="nav-link" to='/dashboard'>Dashboard</Link>
