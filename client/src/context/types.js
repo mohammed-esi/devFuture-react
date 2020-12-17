@@ -25,3 +25,7 @@ export const FILTER_PROFILES = 'FILTER_PROFILES';
 export const CLEAR_FILTER = 'CLEAR_FILTER';
 export const GET_REPOS = 'GET_REPOS';
 export const NO_REPOS = 'NO_REPOS';
+export const GET_SERVICES = 'GET_SERVICES';
+export const ADD_SERVICE = 'ADD_SERVICE';
+export const DELETE_SERVICE = 'DELETE_SERVICE';
+export const SERVICE_ERROR = 'SERVICE_ERROR';
