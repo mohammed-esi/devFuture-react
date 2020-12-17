@@ -35,7 +35,7 @@ router.post(
       const newService = new Service({
         title: req.body.title,
         text: req.body.text,
-        skills: req.body.skills,
+        skills: Array.isArray(req.body.skills) ? req.body.skills : req.body.skills.split(',').map((skill) => ' ' + skill.trim()),
         name: user.firstName + ' ' + user.lastName,
         avatar: user.avatar,
         user: req.user.id,
