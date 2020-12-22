@@ -9,10 +9,12 @@ $(document).ready(function () {
           $('nav').removeClass('py-5');
           $('nav').addClass('navbar-scroll fixed-top py-3');
           $('.navbar-user').removeClass('py-5 navbar-scroll fixed-top');
+          $('.navbar-pagination').removeClass('py-5 navbar-scroll fixed-top');
         } else {
           $('nav').removeClass('navbar-scroll fixed-top py-3');
           $('nav').addClass('py-5');
           $('.navbar-user').removeClass('py-5');
+          $('.navbar-pagination').removeClass('py-5');
         }
       });
     }
