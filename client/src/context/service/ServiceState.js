@@ -7,7 +7,10 @@ import {
   GET_SERVICES,
   ADD_SERVICE,
   DELETE_SERVICE,
-  SERVICE_ERROR
+  SERVICE_ERROR,
+  FILTERED_SERVICES,
+  CLEAR_FILTER,
+  GET_SERVICE
 } from '../types'
 
 const ServiceState = (props) => {
@@ -16,7 +19,7 @@ const ServiceState = (props) => {
 
   const initialState = {
     services: [],
-    filtered: null,
+    filtered: [],
     service: null,
     loading: true,
     error: {}
@@ -32,6 +35,22 @@ const ServiceState = (props) => {
       const res = await axios.get('/api/services');
       dispatch({
         type: GET_SERVICES,
+        payload: res.data
+      })
+    } catch (err) {
+      dispatch({
+        type: SERVICE_ERROR,
+        payload: { msg: err.response.statusText, status: err.response.status }
+      })
+    }
+  }
+
+  // Get service by ID 
+  const getServiceById = async (id) => {
+    try {
+      const res = await axios.get(`/api/services/${id}`);
+      dispatch({
+        type: GET_SERVICE,
         payload: res.data
       })
     } catch (err) {
@@ -67,6 +86,18 @@ const ServiceState = (props) => {
   }
 
 
+  // Fiter services
+  const filterServices = (text) => {
+    dispatch({ type: FILTERED_SERVICES, payload: text })
+  }
+
+
+  // Clear filtered
+  const clearFilter = () => {
+    dispatch({ type: CLEAR_FILTER })
+  }
+
+
 
 
 
@@ -80,7 +111,10 @@ const ServiceState = (props) => {
       error: state.error,
       loading: state.loading,
       getServices,
-      createService
+      createService,
+      filterServices,
+      clearFilter,
+      getServiceById
     }} >
       {props.children}
     </ServiceContext.Provider>
