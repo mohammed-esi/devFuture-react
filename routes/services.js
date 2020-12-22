@@ -67,24 +67,27 @@ router.get('/', async (req, res) => {
 // @route GET /api/services/:id
 // @desc  Get service by ID
 // @access Private
-router.get('/:id', [auth, checkObjectId('id')], async (req, res) => {
+router.get('/:id', [checkObjectId('id')], async (req, res) => {
   try {
     const service = await Service.findById(req.params.id);
-    const user = await User.findById(req.user.id).select('-password');
+    console.log(req.params.id);
+    // const user = await User.findById(req.user.id).select('-password');
+
+    if (!service) return res.status(404).json({msg: "service doesn't exists!"})
 
     // Check User
-    if (user.id !== service.user.toString()) {
-      return res.status(400).json({
-        success: false,
-        msg: `This is service doesn't exist for ${
-          user.firstName + ' ' + user.lastName
-        }`,
-      });
-    }
+    // if (user.id !== service.user.toString()) {
+    //   return res.status(400).json({
+    //     success: false,
+    //     msg: `This is service doesn't exist for ${
+    //       user.firstName + ' ' + user.lastName
+    //     }`,
+    //   });
+    // }
 
     res.json(service);
   } catch (err) {
-    console.error(err.message);
+    console.error(err);
     res.status(500).send('Server Error!');
   }
 });
