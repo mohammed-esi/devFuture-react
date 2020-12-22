@@ -23,7 +23,7 @@ const ServiceItem = ({service}) => {
             <div className="d-flex">   
               <p className="text-center">
                 {skills.map((skill, index) => (
-                  <span className="badge badge-pill badge-green" key={index}>{skill}</span>
+                  <span className="badge badge-pill badge-green mx-1" key={index}>{skill}</span>
                 ))}
               </p>
             </div>
