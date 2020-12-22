@@ -1,4 +1,4 @@
-import React, {useContext, useEffect} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import { Route, Switch } from 'react-router-dom';
 import AuthContext from '../../context/auth/authContext'
 import Dashboard from '../dashboard/Dashboard';
@@ -7,15 +7,18 @@ import GetStarted from '../auth/GetStarted';
 import NotFound from '../pages/NotFound';
 import PrivateRoute from './PrivateRoute';
 import RoutesUser from './RoutesUser'
+import LoadingPage from '../layout/LoadingPage'
 
 const Routes = () => {
   const authContext = useContext(AuthContext)
-  const {loadUser} = authContext;
+  const {loadUser, loading} = authContext;
 
   useEffect(() => {
     loadUser()
     // eslint-disable-next-line
   }, []);
+  
+  if (loading) return (<LoadingPage />)
   return (
     <Switch>
       <Route exact path='/login' component={Login} />

@@ -15,7 +15,6 @@ const GetStarted = (props) => {
     isAuthenticated,
     error,
     clearErrors,
-    loading,
   } = authContext;
 
   const [user, setUser] = useState({
@@ -37,6 +36,8 @@ const GetStarted = (props) => {
     // eslint-disable-next-line
   }, [error, props.history]);
 
+  const [ displayLoading, setDispalyLoading ] = useState(false)
+
   const onChange = (e) => setUser({ ...user, [e.target.name]: e.target.value });
 
   const onSubmit = (e) => {
@@ -54,13 +55,17 @@ const GetStarted = (props) => {
     } else if (password.length < 6 && passwordTwo.length < 6) {
       setAlert('Password min 6 characters', 'danger');
     } else {
-      register({
-        firstName,
-        lastName,
-        email,
-        username,
-        password,
-      });
+      setDispalyLoading(!displayLoading)
+      setTimeout(() => {
+        setDispalyLoading(displayLoading)
+        register({
+          firstName,
+          lastName,
+          email,
+          username,
+          password,
+        });
+      }, 2000);
     }
   };
 
@@ -157,7 +162,7 @@ const GetStarted = (props) => {
                     />
                   </div>
                   <div className='d-flex justify-content-start align-items-center'>
-                    {loading ? (
+                    {displayLoading ? (
                       <button
                         type='submit'
                         className='btn btn-card btn-lg px-5 mt-3 mb-4'

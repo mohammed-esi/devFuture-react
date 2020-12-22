@@ -16,10 +16,10 @@ const Login = (props) => {
     error,
     clearErrors,
     isAuthenticated,
-    loading,
     loginFacebook,
     loginGoogle,
   } = authContext;
+
 
   useEffect(() => {
     if (isAuthenticated) {
@@ -36,6 +36,9 @@ const Login = (props) => {
     // eslint-disable-next-line
   }, [error, isAuthenticated, props.history]);
 
+  const [ displayLoading, setDispalyLoading ] = useState(false)
+
+
   const [user, setUser] = useState({
     email: '',
     password: '',
@@ -50,10 +53,14 @@ const Login = (props) => {
     if (email === '' || password === '') {
       setAlert('Please fill in all fields', 'danger');
     } else {
-      login({
-        email,
-        password,
-      });
+      setDispalyLoading(!displayLoading)
+      setTimeout(() => {
+        setDispalyLoading(displayLoading)
+        login({
+          email,
+          password,
+        });
+      }, 2000);
     }
   };
 
@@ -137,10 +144,11 @@ const Login = (props) => {
                     />
                   </div>
                   <div className='d-flex justify-content-center'>
-                    {loading ? (
+                    {displayLoading ? (
                       <button
                         type='submit'
                         className='btn btn-card btn-lg px-5 mt-3 mb-4'
+                        disabled
                       >
                         <Loading />
                       </button>

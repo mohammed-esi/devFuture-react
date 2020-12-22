@@ -17,7 +17,7 @@ const Dashboard = (props) => {
 
   const showSidebar = () => setSidebar(!sidebar);
 
-  const {logout, user, loadUser} = authcontext;
+  const {logout, user} = authcontext;
   const { profile, getCurrentProfile, clearProfile, deleteAccount } = profileContext;
 
   const [ displayLoading, setDispalyLoading ] = useState(false)
