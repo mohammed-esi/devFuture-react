@@ -3,7 +3,8 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  .btn:focus {
+  .btn:focus,
+  .page-link:focus {
     box-shadow: none;
   }
   .flex-column {
@@ -23,6 +24,9 @@
   .row {
     margin-left: 0;
     margin-right: 0;
+  }
+  .card-of-page {
+    min-height: 1080px;
   }
   .card {
     background-color: $color_lighten;

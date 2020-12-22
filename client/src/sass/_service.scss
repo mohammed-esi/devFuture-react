@@ -1,0 +1,114 @@
+#service {
+  .btn:focus {
+    box-shadow: none;
+  }
+  .container {
+    min-width: 95%;
+  }
+  .card {
+    -webkit-box-shadow: 0px 3px 7px -0.5px rgba(172, 170, 170, 1);
+    -moz-box-shadow: 0px 3px 7px -0.5px rgba(172, 170, 170, 1);
+    box-shadow: 0px 3px 7px -0.5px rgba(172, 170, 170, 1);
+    background-color: lighten($color: $color_lighten, $amount: 2.5);
+    border-radius: 0;
+    .card-body {
+      .d-flex {
+        .flex-column {
+          h1 {
+            color: $color_darken_blue;
+          }
+        }
+        i {
+          color: $color_darken_blue;
+        }
+      }
+      .badge-green {
+        background-color: $color_darken_blue;
+        color: $color_lighten_green;
+      }
+      .badge-pill {
+        padding-right: 0.8rem;
+        padding-right: 0.8rem;
+      }
+      .btn-card {
+        background-color: $color_darken_blue;
+        font-family: 'Skranji', cursive;
+        color: $color_verylight_green;
+        border-end-end-radius: 14px;
+        transition: 400ms;
+        i {
+          color: $color_verylight_green;
+        }
+      }
+      .btn-card:hover {
+        background-color: $color_verylight_green;
+        color: $color_darken_blue;
+        i {
+          color: $color_darken_blue;
+        }
+      }
+      hr {
+        border-top: 2px solid $color_darken_blue;
+        width: 60%;
+      }
+    }
+  }
+  .card-user {
+    -webkit-box-shadow: 0px 3px 7px -0.5px rgba(172, 170, 170, 1);
+    -moz-box-shadow: 0px 3px 7px -0.5px rgba(172, 170, 170, 1);
+    box-shadow: 0px 3px 7px -0.5px rgba(172, 170, 170, 1);
+    .card-body {
+      a {
+        color: $color_darken_blue;
+      }
+      a:hover {
+        text-decoration: none;
+        color: $color_lighten_green;
+      }
+      img {
+        border: 2px solid $color_lighten_green;
+        border-radius: 50%;
+      }
+    }
+    .form-group {
+      textarea:focus,
+      textarea.form-control:focus,
+      input.form-control:focus,
+      input[type='text']:focus,
+      [type='text'].form-control:focus,
+      [contenteditable].form-control:focus {
+        box-shadow: inset 0 -1px 0 #ddd;
+        border: 2px solid $color_darken_blue;
+        border-radius: 5px;
+      }
+      .form-control {
+        background-color: lighten($color: $color_lighten, $amount: 2.5);
+        border: none;
+        border-bottom: 2px solid $color_darken_blue;
+        border-radius: 0;
+      }
+      .form-control-error {
+        background-color: lighten($color: $color_lighten, $amount: 2.5);
+        border: none;
+        border-bottom: 2px solid $color_danger;
+        border-radius: 0;
+      }
+      .form-control-success {
+        background-color: lighten($color: $color_lighten, $amount: 2.5);
+        border: none;
+        border-bottom: 2px solid $color_success;
+        border-radius: 0;
+      }
+    }
+    .card-comment {
+      border: 1px solid $color_darken_blue;
+      border-radius: 4px;
+      .comment {
+        img {
+          width: 13%;
+          height: 13%;
+        }
+      }
+    }
+  }
+}
