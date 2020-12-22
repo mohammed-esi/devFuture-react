@@ -24,7 +24,7 @@ const AuthState = (props) => {
   const initialState = {
     token: localStorage.getItem('token'),
     isAuthenticated: null,
-    loading: false,
+    loading: true,
     user: null,
     error: null,
   };
@@ -35,18 +35,20 @@ const AuthState = (props) => {
   const loadUser = async () => {
     setAuthToken(localStorage.token);
 
-    try {
-      const res = await axios.get('/api/auth');
-
-      dispatch({
-        type: USER_LOADED,
-        payload: res.data,
-      });
-    } catch (err) {
-      dispatch({
-        type: AUTH_ERROR,
-      });
-    }
+    setTimeout(async () => {
+      try {
+        const res = await axios.get('/api/auth');
+  
+        dispatch({
+          type: USER_LOADED,
+          payload: res.data,
+        });
+      } catch (err) {
+        dispatch({
+          type: AUTH_ERROR,
+        });
+      }
+    }, 2000);
   };
 
   // Register User
@@ -59,9 +61,6 @@ const AuthState = (props) => {
 
     setLoading();
     try {
-      setTimeout(() => {
-        stopLoading();
-      }, 3000);
       const res = await axios.post('/api/users', formData, config);
 
       dispatch({
@@ -88,9 +87,6 @@ const AuthState = (props) => {
 
     setLoading();
     try {
-      setTimeout(() => {
-        stopLoading();
-      }, 3000);
       const res = await axios.post('/api/auth', formData, config);
       dispatch({
         type: LOGIN_SUCCESS,
@@ -110,9 +106,6 @@ const AuthState = (props) => {
   const loginGoogle = async () => {
     setLoading();
     try {
-      setTimeout(() => {
-        stopLoading();
-      }, 3000);
       const res = await axios.get('/auth/google/callback');
       dispatch({
         type: LOGIN_GOOGLE,
@@ -132,9 +125,6 @@ const AuthState = (props) => {
   const loginFacebook = async () => {
     setLoading();
     try {
-      setTimeout(() => {
-        stopLoading();
-      }, 3000);
       const res = await axios.get('/auth/facebook/callback');
       dispatch({
         type: LOGIN_FACEBOOK,
@@ -151,7 +141,12 @@ const AuthState = (props) => {
   };
 
   // Logout
-  const logout = () => dispatch({ type: LOGOUT });
+  const logout = () => {
+    setLoading()
+    setTimeout(() => {
+      dispatch({ type: LOGOUT });
+    }, 2000);
+  }
 
   // Clear Errors
   const clearErrors = () => dispatch({ type: CLEAR_ERRORS });
