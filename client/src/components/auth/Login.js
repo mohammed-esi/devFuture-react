@@ -88,28 +88,32 @@ const Login = (props) => {
                   <div className='row py-3'>
                     <div className='col-12'>
                       <div className='d-flex justify-content-center'>
-                        <Link
-                          to='/getStarted'
+                        <button
                           className='btn btn-facebook btn-lg btn-block my-3'
+                          data-placement="right" 
+                          title="There is a problem in this feature, we'll fix it."
+                          disabled
                         >
                           <div className='d-flex justify-content-center'>
                             <i className='fab fa-facebook mr-4' />
                             Login with Facebook
                           </div>
-                        </Link>
+                        </button>
                       </div>
                     </div>
                     <div className='col-12'>
                       <div className='d-flex justify-content-center'>
-                        <a
-                          href='/google'
+                        <button
                           className='btn btn-google btn-lg btn-block my-3'
+                          disabled
+                          data-placement="right" 
+                          title="There is a problem in this feature, we'll fix it."
                         >
                           <div className='d-flex justify-content-center'>
                             <i className='fab fa-google mr-4' />
                             Login with Google
                           </div>
-                        </a>
+                        </button>
                       </div>
                     </div>
                   </div>
