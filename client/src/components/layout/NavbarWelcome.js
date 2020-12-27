@@ -37,6 +37,11 @@ const NavbarWelcome = () => {
             </a>
           </li>
           <li className='nav-item mx-3'>
+            <Link className='nav-link' to='/services'>
+              Go
+            </Link>
+          </li>
+          <li className='nav-item mx-3'>
             <Link className='nav-link' to='/login'>
               Login <i className='fas fa-sign-in-alt ml-2' />
             </Link>

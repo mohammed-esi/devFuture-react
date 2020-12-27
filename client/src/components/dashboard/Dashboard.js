@@ -4,7 +4,7 @@ import ProfileContext from '../../context/profile/profileContext'
 import Education from './Education'
 import Experience from './Experience'
 import Loading from '../layout/Loading'
-import { Link } from 'react-router-dom'
+import DashboardSideBar from './DashboardSideBar'
 
 
 // import persontwo from '../../img/person-two.png';
@@ -18,7 +18,7 @@ const Dashboard = (props) => {
   const showSidebar = () => setSidebar(!sidebar);
 
   const {logout, user} = authcontext;
-  const { profile, getCurrentProfile, clearProfile, deleteAccount } = profileContext;
+  const { profile, getCurrentProfile, clearProfile, deleteAccount, loading } = profileContext;
 
   const [ displayLoading, setDispalyLoading ] = useState(false)
 
@@ -46,76 +46,14 @@ const Dashboard = (props) => {
   return (
     <Fragment>
       {/* Dashboard Side Bar */}
-      <div className={sidebar ? 'sidenav visible' : 'sidenav'}>
-        <button className='btn closebtn' onClick={showSidebar}>×</button>
-        <div className='container'>
-          <div className='d-flex flex-column pt-4 pb-5'>
-            <div className='d-flex justify-content-center'>
-              <img
-                src={user && user.avatar}
-                alt='smart'
-                className='img-fluid rounded-circle'
-              />
-            </div>
-            <div className='d-flex justify-content-center my-4'>
-              {user && profile ? (
-                <Link to={`/profile/${user._id}`}>
-                  <h5>{user.firstName[0].toUpperCase() + '. ' + user.lastName.charAt(0).toUpperCase() + user.lastName.slice(1)}</h5>
-                </Link>
-              ) : (
-                <Fragment>
-                  {user && (<h5>{user.firstName[0].toUpperCase() + '. ' + user.lastName.charAt(0).toUpperCase() + user.lastName.slice(1)}</h5>)}
-                </Fragment>
-              )}
-            </div>
-            <div className='d-flex flex-column justify-content-start'>
-              <h6 className='mt-4'>
-                <Link to='/services'>
-                  <i className='fas fa-clone mr-3' /> Services
-                </Link>
-              </h6>
-              <h6 className='mt-4'>
-                <Link to='/profiles'>
-                  <i className='fas fa-code mr-3' /> Developers
-                </Link>
-              </h6>
-              {profile ? (
-                <Fragment>
-                  <h6 className='mt-4'>
-                    <Link to='/edit-profile'>
-                      <i className='fas fa-user-circle mr-3' /> Edit Profile
-                    </Link>
-                  </h6>
-                  <h6 className='mt-4'>
-                    <Link to='/edit-education'>
-                      <i className='fas fa-graduation-cap mr-3' /> Edit Education
-                    </Link>
-                  </h6>
-                  <h6 className='mt-4'>
-                    <Link to='/edit-experience'>
-                      <i className='fab fa-black-tie mr-3' /> Edit Experience
-                    </Link>
-                  </h6>
-                </Fragment>
-              ) : (
-                <Fragment>
-                  <h6 className='mt-4'>
-                    <Link to='/create-profile'>
-                          <i className='fas fa-user-circle mr-3' /> Create Profile
-                    </Link>
-                  </h6>
-                </Fragment>
-              )}
-              <hr className='mx-4 my-4' />
-              <h6 className='mt-4'>
-                <Link to='#' onClick={onLogout}>
-                  <i className='fas fa-sign-out-alt mr-3' /> Logout
-                </Link>
-              </h6>
-            </div>
-          </div>
-        </div>
-      </div>
+      <DashboardSideBar 
+      user={user} 
+      profile={profile} 
+      loading={loading} 
+      sidebar={sidebar} 
+      onLogout={onLogout} 
+      showSidebar={showSidebar} />
+      
       {/* Dashboard */}
       <section id='dashboard'>
         <div className='row'>
