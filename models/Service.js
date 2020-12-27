@@ -3,8 +3,9 @@ const Schema = mongoose.Schema;
 
 const ServicesSchema = new Schema({
   user: {
-    type: Schema.Types.ObjectId,
+    type: Schema.Types.ObjectId
   },
+  profile: {},
   title: {
     type: String,
     required: true,
@@ -21,6 +22,9 @@ const ServicesSchema = new Schema({
     type: String,
   },
   avatar: {
+    type: String,
+  },
+  email: {
     type: String,
   },
   likes: [

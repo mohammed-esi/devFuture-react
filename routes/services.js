@@ -5,6 +5,7 @@ const auth = require('../middleware/auth');
 
 const Service = require('../models/Service');
 const User = require('../models/User');
+const Profile = require('../models/Profile')
 const checkObjectId = require('../middleware/checkObjectId');
 
 // @route  POST /api/services
@@ -31,21 +32,23 @@ router.post(
 
     try {
       const user = await User.findById(req.user.id).select('-password');
-
+      const profile = await Profile.findOne({user : req.user.id}).select('status')
       const newService = new Service({
         title: req.body.title,
         text: req.body.text,
         skills: Array.isArray(req.body.skills) ? req.body.skills : req.body.skills.split(',').map((skill) => ' ' + skill.trim()),
         name: user.firstName + ' ' + user.lastName,
         avatar: user.avatar,
+        email: user.email,
         user: req.user.id,
+        profile: profile
       });
 
       const service = await newService.save();
 
       res.json(service);
     } catch (err) {
-      console.error(err.message);
+      console.error(err);
       res.status(500).send('Server Error!');
     }
   }
