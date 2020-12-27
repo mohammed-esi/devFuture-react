@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Welcome from './components/pages/Home';
 import Routes from './components/routing/Routes';
 
 
@@ -17,8 +16,7 @@ function App() {
         <ProfileState>
           <ServiceState>
             <Router>
-              <Switch>       
-                <Route exact path='/' component={Welcome} />
+              <Switch>
                 <Route component={Routes} />
               </Switch>
             </Router>

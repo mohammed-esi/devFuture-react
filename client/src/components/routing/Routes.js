@@ -8,6 +8,7 @@ import NotFound from '../pages/NotFound';
 import PrivateRoute from './PrivateRoute';
 import RoutesUser from './RoutesUser'
 import LoadingPage from '../layout/LoadingPage'
+import Welcome from '../pages/Home'
 
 const Routes = () => {
   const authContext = useContext(AuthContext)
@@ -21,6 +22,7 @@ const Routes = () => {
   if (loading) return (<LoadingPage />)
   return (
     <Switch>
+      <Route exact path='/' component={Welcome} />
       <Route exact path='/login' component={Login} />
       <Route exact path='/getStarted' component={GetStarted} />
       <PrivateRoute exact path='/dashboard' component={Dashboard} />
