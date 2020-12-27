@@ -5,7 +5,10 @@ import {
   SERVICE_ERROR,
   FILTERED_SERVICES,
   CLEAR_FILTER,
-  GET_SERVICE
+  GET_SERVICE,
+  UPDATE_LIKES,
+  ADD_COMMENT,
+  DELETE_COMMENT,
 } from '../types'
 
 
@@ -30,6 +33,26 @@ export default (state, action) => {
         services: [action.payload, ...state.services],
         loading: false
       }
+    case UPDATE_LIKES:
+      return {
+        ...state,
+        services: state.services.map(service =>
+          service.id === action.payload.id ? { ...service, likes: action.payload.likes } : service
+        ),
+        loading: false
+      }
+    case ADD_COMMENT:
+      return {
+        ...state,
+        service: { ...state.service, comments: action.payload },
+        loading: false
+      }
+      case DELETE_COMMENT:
+        return {
+          ...state,
+          service: { ...state.service, comments: state.service.comments.filter(comment => (comment._id !== action.payload)) },
+          loading: false
+        }
     case FILTERED_SERVICES:
       return {
         ...state,

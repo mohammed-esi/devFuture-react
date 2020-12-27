@@ -30,4 +30,7 @@ export const GET_SERVICE = 'GET_SERVICE';
 export const ADD_SERVICE = 'ADD_SERVICE';
 export const DELETE_SERVICE = 'DELETE_SERVICE';
 export const SERVICE_ERROR = 'SERVICE_ERROR';
+export const ADD_COMMENT = 'ADD_COMMENT';
+export const DELETE_COMMENT = 'DELETE_COMMENT';
 export const  FILTERED_SERVICES = 'FILTERED_SERVICES';
+export const  UPDATE_LIKES = 'UPDATE_LIKES';

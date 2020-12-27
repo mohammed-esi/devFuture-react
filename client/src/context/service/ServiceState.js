@@ -10,7 +10,10 @@ import {
   SERVICE_ERROR,
   FILTERED_SERVICES,
   CLEAR_FILTER,
-  GET_SERVICE
+  GET_SERVICE,
+  UPDATE_LIKES,
+  ADD_COMMENT,
+  DELETE_COMMENT,
 } from '../types'
 
 const ServiceState = (props) => {
@@ -31,34 +34,38 @@ const ServiceState = (props) => {
 
   // Get all services
   const getServices = async () => {
-    try {
-      const res = await axios.get('/api/services');
-      dispatch({
-        type: GET_SERVICES,
-        payload: res.data
-      })
-    } catch (err) {
-      dispatch({
-        type: SERVICE_ERROR,
-        payload: { msg: err.response.statusText, status: err.response.status }
-      })
-    }
+    setTimeout(async () => {
+      try {
+        const res = await axios.get('/api/services');
+        dispatch({
+          type: GET_SERVICES,
+          payload: res.data
+        })
+      } catch (err) {
+        dispatch({
+          type: SERVICE_ERROR,
+          payload: { msg: err.response.statusText, status: err.response.status }
+        })
+      }
+    }, 2000);
   }
 
   // Get service by ID 
   const getServiceById = async (id) => {
-    try {
-      const res = await axios.get(`/api/services/${id}`);
-      dispatch({
-        type: GET_SERVICE,
-        payload: res.data
-      })
-    } catch (err) {
-      dispatch({
-        type: SERVICE_ERROR,
-        payload: { msg: err.response.statusText, status: err.response.status }
-      })
-    }
+    setTimeout(async () => {
+      try {
+        const res = await axios.get(`/api/services/${id}`);
+        dispatch({
+          type: GET_SERVICE,
+          payload: res.data
+        })
+      } catch (err) {
+        dispatch({
+          type: SERVICE_ERROR,
+          payload: { msg: err.response.statusText, status: err.response.status }
+        })
+      }
+    }, 2000);
   }
 
 
@@ -82,6 +89,76 @@ const ServiceState = (props) => {
         type: SERVICE_ERROR,
         payload: { msg: err.response.statusText, status: err.response.status }
       })
+    }
+  }
+
+  // Add like on service
+  const addLike = async (id) => {
+    try {
+      const res = await axios.put(`/api/services/like/${id}`)
+      dispatch({
+        type: UPDATE_LIKES,
+        payload: {id, likes: res.data}
+      })
+    } catch (err) {
+      dispatch({
+        type: SERVICE_ERROR,
+        payload: err.response.data
+      });
+    }
+  }
+
+  // Remove like on service
+  const removeLike = async (id) => {
+    try {
+      const res = await axios.put(`/api/services/unlike/${id}`)
+      dispatch({
+        type: UPDATE_LIKES,
+        payload: {id, likes: res.data}
+      })
+    } catch (err) {
+      dispatch({
+        type: SERVICE_ERROR,
+        payload: { msg: err.response.statusText, status: err.response.status }
+      });
+    }
+  }
+
+  // Add Comment is service
+  const addComment = async (serviceId, formData) => {
+    const config = {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    };
+    try {
+      const res = await axios.post(`/api/services/comment/${serviceId}`, formData, config)
+      dispatch({
+        type: ADD_COMMENT,
+        payload: res.data
+      })
+    } catch (err) {
+      dispatch({
+        type: SERVICE_ERROR,
+        payload: { msg: err.response.statusText, status: err.response.status }
+      });
+    }
+  }
+
+
+  // Delete Comment is service
+  const deleteComment = async (serviceId, commentId) => {
+    try {
+      const res = await axios.post(`/api/services/comment/${serviceId}/${commentId}`)
+      dispatch({
+        type: DELETE_COMMENT,
+        payload: commentId
+      })
+    } catch (err) {
+      dispatch({
+        type: SERVICE_ERROR,
+        payload: { msg: err.response.statusText, status: err.response.status }
+      });
     }
   }
 
@@ -114,7 +191,11 @@ const ServiceState = (props) => {
       createService,
       filterServices,
       clearFilter,
-      getServiceById
+      getServiceById,
+      addLike,
+      removeLike,
+      addComment,
+      deleteComment
     }} >
       {props.children}
     </ServiceContext.Provider>
