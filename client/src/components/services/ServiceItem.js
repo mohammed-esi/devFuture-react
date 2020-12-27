@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
 const ServiceItem = ({service}) => {
 
@@ -13,7 +14,7 @@ const ServiceItem = ({service}) => {
           <div className="float-left">
             <div className="d-flex align-items-center">
               <h5><i className="fas fa-tv fa-2x" /></h5>
-              <a href="./service.html" target="_blank"><h5 className="mx-4">{title}</h5></a>
+              <Link to={`/service/${_id}`} target="_blank"><h5 className="mx-4">{title}</h5></Link>
             </div>
             <div className="d-flex align-items-center py-3">
               <p>
