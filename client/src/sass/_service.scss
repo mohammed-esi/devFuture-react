@@ -47,6 +47,13 @@
           color: $color_darken_blue;
         }
       }
+      .active {
+        background-color: $color_verylight_green;
+        color: $color_darken_blue;
+        i {
+          color: $color_darken_blue;
+        }
+      }
       hr {
         border-top: 2px solid $color_darken_blue;
         width: 60%;
@@ -105,8 +112,8 @@
       border-radius: 4px;
       .comment {
         img {
-          width: 13%;
-          height: 13%;
+          width: 80px;
+          height: 80px;
         }
       }
     }

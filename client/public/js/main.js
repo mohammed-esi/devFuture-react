@@ -51,6 +51,10 @@ $(document).ready(function () {
     wrap: true,
   });
 
+
+  // Init tooltips
+  $('[data-toggle="tooltip"]').tooltip();
+
   // $('#sidebar-btn').on('click', function() {
   //   $('#sidebar').addClass('visible');
   //   console.log(4)
