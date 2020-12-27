@@ -16,6 +16,7 @@ const  Profiles = () => {
   }, [])
 
 
+
   return (
     <Fragment>
       <ProfileCorousel />
@@ -31,7 +32,19 @@ const  Profiles = () => {
                 (
                   <Fragment>
                     {filtered !== null ? (
-                      filtered.map(profile => (<ProfileItem key={profile._id} profile={profile} />))
+                      <Fragment>
+                        {filtered.length > 0 ? (
+                          filtered.map(profile => (<ProfileItem key={profile._id} profile={profile} />))
+                        ) : (
+                          <div className="col-sm-12 mx-4 my-4">
+                            <div className="d-flex justify-content-center align-items-center my-6">
+                              <h2 className="my-2 text-muted">
+                                No profile found <i className="fab fa-searchengin"></i>
+                              </h2>
+                            </div>  
+                          </div>
+                        )}
+                      </Fragment>
                     ) : (
                       profiles.map(profile => (<ProfileItem key={profile._id} profile={profile} />))
                     )}

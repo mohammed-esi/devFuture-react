@@ -5,17 +5,22 @@ import ProfileAbout from './ProfileAbout'
 import ProfileEducation from './ProfileEducation'
 import ProfileExperience from './ProfileExperience'
 import ProfileGithub from './ProfileGithub'
+import LoadingPage from '../layout/LoadingPage'
 
 
 
 const Profile = (props) => {
   const profileContext = useContext(ProfileContext)
-  const { profile, getProfileById } = profileContext
+  const { profile, getProfileById, loading } = profileContext
 
   useEffect(() => {
     getProfileById(props.match.params.id)
     // eslint-disable-next-line
   }, [props.match.params.id])
+
+  if (loading) {
+    return <LoadingPage />
+  }
 
 
 
