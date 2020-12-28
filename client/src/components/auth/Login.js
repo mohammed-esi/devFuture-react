@@ -4,7 +4,6 @@ import AlerContext from '../../context/alert/alertContext';
 import AuthContext from '../../context/auth/authContext';
 import Alert from '../layout/Alert';
 import Loading from '../layout/Loading';
-import { Link } from 'react-router-dom';
 
 const Login = (props) => {
   const alertConetxt = useContext(AlerContext);
@@ -15,9 +14,7 @@ const Login = (props) => {
     login,
     error,
     clearErrors,
-    isAuthenticated,
-    loginFacebook,
-    loginGoogle,
+    isAuthenticated
   } = authContext;
 
 

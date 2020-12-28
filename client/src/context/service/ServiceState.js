@@ -6,7 +6,6 @@ import AlertContext from '../alert/alertContext'
 import {
   GET_SERVICES,
   ADD_SERVICE,
-  DELETE_SERVICE,
   SERVICE_ERROR,
   FILTERED_SERVICES,
   CLEAR_FILTER,
@@ -149,7 +148,7 @@ const ServiceState = (props) => {
   // Delete Comment is service
   const deleteComment = async (serviceId, commentId) => {
     try {
-      const res = await axios.post(`/api/services/comment/${serviceId}/${commentId}`)
+      await axios.delete(`/api/services/comment/${serviceId}/${commentId}`)
       dispatch({
         type: DELETE_COMMENT,
         payload: commentId

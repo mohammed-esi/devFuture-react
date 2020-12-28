@@ -26,7 +26,8 @@ const ServiceAbout = ({ service, showComments }) => {
         toggelActiveButton(true)
       }
     }
-  }, [error])
+  }, [error, likes, user, _id])
+
 
   const onClick = (e) => {
     e.preventDefault()

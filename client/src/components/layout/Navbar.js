@@ -1,16 +1,13 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import AuthContext from '../../context/auth/authContext'
-import ProfileContext from '../../context/profile/profileContext'
 import logo from '../../img/LogoMaker.png';
 
 
 const Navbar = () => {
   const authContext = useContext(AuthContext)
-  const profileContext = useContext(ProfileContext)
 
   const { loading, isAuthenticated, logout } = authContext;
-  const { clearProfile } = profileContext
 
   const onLogout = () => {
     logout();

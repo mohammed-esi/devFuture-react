@@ -34,7 +34,7 @@ const AddExperience = (props) => {
     if (title === '' || company === '') {
       setAlert('Title and company required!', 'danger')
     } else {
-      if (to <= from && to || from === '') {
+      if (to <= from && (to || from === '')) {
         setAlert('From date is required and needs to be from to the past', 'danger')
       } else {
         addExperience(formData)

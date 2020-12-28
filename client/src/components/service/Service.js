@@ -23,7 +23,7 @@ const Service = (props) => {
 
   useEffect(() => {
     getServiceById(props.match.params.id)
-  }, [getServiceById])
+  }, [getServiceById, props.match.params])
 
   return (
     <Fragment>

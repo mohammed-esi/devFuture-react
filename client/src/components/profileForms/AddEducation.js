@@ -33,7 +33,7 @@ const AddEducation = (props) => {
     if (school === '' || degree === '' || fieldofstudy === '') {
       setAlert('School, degree and study required!', 'danger')
     } else {
-      if (to <= from && to || from === '') {
+      if (to <= from && (to || from === '')) {
         setAlert('From date is required and needs to be from to the past', 'danger')
       } else {
         addEducation(formData)
