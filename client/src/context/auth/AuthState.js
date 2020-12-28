@@ -1,8 +1,9 @@
-import React, { useReducer } from 'react';
+import React, { useContext, useReducer } from 'react';
 import axios from 'axios';
 import setAuthToken from '../../utils/setAuthToken';
 import AuthContext from './authContext';
 import authReducer from './authReducer';
+import AlertContext from '../alert/alertContext'
 import {
   REGISTER_SUCCESS,
   REGISTER_FAIL,
@@ -21,6 +22,9 @@ import {
 } from '../types';
 
 const AuthState = (props) => {
+  const alertContext = useContext(AlertContext);
+  const { setAlert } = alertContext
+
   const initialState = {
     token: localStorage.getItem('token'),
     isAuthenticated: null,
@@ -70,10 +74,15 @@ const AuthState = (props) => {
 
       loadUser();
     } catch (err) {
-      dispatch({
-        type: REGISTER_FAIL,
-        payload: err.response.data.msg,
-      });
+      const errors = err.response.data;
+      if (errors) {
+        dispatch({ type: REGISTER_FAIL}, setAlert(errors.msg, 'danger'));
+      } else {
+        dispatch({
+          type: REGISTER_FAIL,
+          payload: { msg: err.response.statusText, status: err.response.status }
+        });
+      }
     }
   };
 
@@ -95,10 +104,15 @@ const AuthState = (props) => {
 
       loadUser();
     } catch (err) {
-      dispatch({
-        type: LOGIN_FAIL,
-        payload: err.response.data.msg,
-      });
+      const errors = err.response.data;
+      if (errors) {
+        dispatch({ type: LOGIN_FAIL}, setAlert(errors.msg, 'danger'));
+      } else {
+        dispatch({
+          type: LOGIN_FAIL,
+          payload: { msg: err.response.statusText, status: err.response.status }
+        });
+      }
     }
   };
 

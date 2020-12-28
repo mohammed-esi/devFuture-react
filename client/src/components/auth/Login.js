@@ -22,14 +22,14 @@ const Login = (props) => {
     if (isAuthenticated) {
       props.history.push('/dashboard');
     }
-    if (error === 'Invalid Credentials') {
-      setAlert('password or email is not correct', 'danger');
-      clearErrors();
-    }
-    if (error === 'Email does not exist!') {
-      setAlert('Email does not exist!', 'danger');
-      clearErrors();
-    }
+    // if (error === 'Invalid Credentials') {
+    //   setAlert('password or email is not correct', 'danger');
+    //   clearErrors();
+    // }
+    // if (error === 'Email does not exist!') {
+    //   setAlert('Email does not exist!', 'danger');
+    //   clearErrors();
+    // }
     // eslint-disable-next-line
   }, [error, isAuthenticated, props.history]);
 

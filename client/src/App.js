@@ -11,19 +11,19 @@ import './sass/App.scss';
 
 function App() {
   return (
-    <AuthState>
-      <AlertState>
-        <ProfileState>
-          <ServiceState>
-            <Router>
-              <Switch>
-                <Route component={Routes} />
-              </Switch>
-            </Router>
-          </ServiceState>
-        </ProfileState>
-      </AlertState>
-    </AuthState>
+    <AlertState>
+      <AuthState>
+          <ProfileState>
+            <ServiceState>
+              <Router>
+                <Switch>
+                  <Route component={Routes} />
+                </Switch>
+              </Router>
+            </ServiceState>
+          </ProfileState>
+      </AuthState>
+    </AlertState>
   );
 }
 
